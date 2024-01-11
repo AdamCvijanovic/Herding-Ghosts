@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -6819543091912114524}
   m_Layer: 0
   m_Name: Bed
-  m_TagString: Untagged
+  m_TagString: PlaceableFurniture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -190,7 +190,17 @@ MonoBehaviour:
       m_Action: Place
       m_Flags: 0
     m_Flags: 0
+  removeAction:
+    m_Name: Remove
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: ad5a4a2c-7d87-4ec5-8981-f90c6b9f6b84
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
   selected: 0
+  layer: 0
 --- !u!114 &-6819543091912114524
 MonoBehaviour:
   m_ObjectHideFlags: 0

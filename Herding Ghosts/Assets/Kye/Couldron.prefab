@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -4173360771425782688}
   m_Layer: 0
   m_Name: Couldron
-  m_TagString: Untagged
+  m_TagString: PlaceableFurniture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -163,6 +163,15 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Place
       m_Flags: 0
+    m_Flags: 0
+  removeAction:
+    m_Name: Remove
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: a4643da6-3da9-43eb-a6f2-78b35426a067
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
     m_Flags: 0
   selected: 0
   layer: 100

@@ -75,7 +75,11 @@ public class FurnitureManager : MonoBehaviour
 
     public void RemoveAllFurniture()
     {
-
+        foreach (GameObject furniture in m_createdFurniture)
+        {
+                Destroy(furniture);
+        }
+        m_createdFurniture.Clear();
     }
 
 }

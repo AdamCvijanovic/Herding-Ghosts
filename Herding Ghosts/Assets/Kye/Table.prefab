@@ -34,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 36
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3121974790314794379
 SpriteRenderer:
@@ -164,7 +164,25 @@ MonoBehaviour:
       m_Action: Place
       m_Flags: 0
     m_Flags: 0
+  removeAction:
+    m_Name: Remove
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 5e799f2e-e70e-43cf-8e9e-a60b2d000785
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: fbf0295f-e9ac-4282-adc2-6de4dc882e66
+      m_Path: <Keyboard>/v
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Remove
+      m_Flags: 0
+    m_Flags: 0
   selected: 0
+  layer: 0
 --- !u!61 &3889286201200700655
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -178,7 +196,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.2841903}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -189,7 +207,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.75, y: 1.4375}
+  m_Size: {x: 1.75, y: 1.0316193}
   m_EdgeRadius: 0
 --- !u!114 &137862871615873063
 MonoBehaviour:

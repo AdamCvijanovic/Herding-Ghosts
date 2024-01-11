@@ -165,6 +165,7 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
   selected: 0
+  layer: 100
 --- !u!61 &-5324045413098589316
 BoxCollider2D:
   m_ObjectHideFlags: 0

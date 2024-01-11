@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class FurnitureManager : MonoBehaviour
 {
 
-    GameObject[] m_createdFurniture;
+    List<GameObject> m_createdFurniture = new List<GameObject>();
     List<GameObject> m_availableFurniture = new List<GameObject>();
     public GameObject[] m_furnitureSelector;
 
@@ -58,6 +58,24 @@ public class FurnitureManager : MonoBehaviour
                 Destroy(furniture);
         }
         m_availableFurniture.Clear();
+    }
+
+    public void CreateFurnitureInScene(GameObject furniture)
+    {
+        m_createdFurniture.Add(furniture);
+        Debug.Log(m_createdFurniture.Count);
+    }
+
+    public void RemoveFurnitureInScene(GameObject furniture)
+    {
+        
+        m_createdFurniture.Remove(furniture);
+        Debug.Log("Removed");
+    }
+
+    public void RemoveAllFurniture()
+    {
+
     }
 
 }

@@ -5,20 +5,32 @@ using UnityEngine.InputSystem;
 
 public class FurnitureController : MonoBehaviour
 {
+
+    private FurnitureManager furnitureManager;
+    
     public InputAction clickAction;
 
     public InputAction rotateAction;
 
     public InputAction placeAction;
-    
+
+    public InputAction removeAction;
+
     public bool selected = false;
 
     private bool m_putDownProtection = false;
 
+    public int layer = 0;
+
     private void OnEnable()
     {
+        furnitureManager = GameObject.FindGameObjectWithTag("FurnitureManager").GetComponent<FurnitureManager>();
+     
+
         clickAction.Enable();
         clickAction.performed += ClickFurniture;
+        GetComponent<YSorter>().modifier += layer;
+
     }
 
     private void OnDisable()
@@ -48,12 +60,22 @@ public class FurnitureController : MonoBehaviour
     {
         GetComponent<Interactable>().enabled = false;
         GetComponent<BoxCollider2D>().isTrigger = true;
+       
+        if(!selected)
+            furnitureManager.CreateFurnitureInScene(gameObject);
+
         selected = true;
+
+       
+
         rotateAction.Enable();
         rotateAction.performed += RotateFurniture;
 
         placeAction.Enable();
         placeAction.performed += PlaceFurniture;
+
+        removeAction.Enable();
+        removeAction.performed += RemoveFurniture;
 
         var player = GameObject.FindGameObjectWithTag("Player").transform;
 
@@ -83,6 +105,9 @@ public class FurnitureController : MonoBehaviour
             placeAction.Disable();
             placeAction.performed -= PlaceFurniture;
 
+            removeAction.Disable();
+            placeAction.performed -= RemoveFurniture;
+
             GetComponent<BoxCollider2D>().isTrigger = false;
 
             GetComponent<Interactable>().enabled = true;
@@ -92,5 +117,22 @@ public class FurnitureController : MonoBehaviour
 
         else
             m_putDownProtection = false;
+    }
+
+
+    public void RemoveFurniture(InputAction.CallbackContext context)
+    {
+        rotateAction.Disable();
+        rotateAction.performed -= RotateFurniture;
+
+        placeAction.Disable();
+        placeAction.performed -= PlaceFurniture;
+
+        removeAction.Disable();
+        placeAction.performed -= RemoveFurniture;
+
+        furnitureManager.RemoveFurnitureInScene(gameObject);
+        Destroy(gameObject);
+
     }
 }

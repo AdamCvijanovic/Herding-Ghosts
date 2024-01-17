@@ -29840,11 +29840,19 @@ PrefabInstance:
       value: 2147291d-f8fb-4803-9ccf-1dfcfb56530e
       objectReference: {fileID: 0}
     - target: {fileID: 3684251200314217398, guid: d94e3d6a10faae74980c9c518714212f, type: 3}
+      propertyPath: rooms.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3684251200314217398, guid: d94e3d6a10faae74980c9c518714212f, type: 3}
       propertyPath: clickAction.m_Name
       value: Click
       objectReference: {fileID: 0}
     - target: {fileID: 3684251200314217398, guid: d94e3d6a10faae74980c9c518714212f, type: 3}
       propertyPath: rooms.Array.data[0]
+      value: 
+      objectReference: {fileID: 1053871722}
+    - target: {fileID: 3684251200314217398, guid: d94e3d6a10faae74980c9c518714212f, type: 3}
+      propertyPath: rooms.Array.data[1]
       value: 
       objectReference: {fileID: 1162681808}
     - target: {fileID: 3684251200314217398, guid: d94e3d6a10faae74980c9c518714212f, type: 3}

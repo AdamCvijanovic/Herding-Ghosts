@@ -23260,7 +23260,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1162681809
 Transform:
   m_ObjectHideFlags: 0
@@ -29843,6 +29843,10 @@ PrefabInstance:
       propertyPath: clickAction.m_Name
       value: Click
       objectReference: {fileID: 0}
+    - target: {fileID: 3684251200314217398, guid: d94e3d6a10faae74980c9c518714212f, type: 3}
+      propertyPath: rooms.Array.data[0]
+      value: 
+      objectReference: {fileID: 1162681808}
     - target: {fileID: 3684251200314217398, guid: d94e3d6a10faae74980c9c518714212f, type: 3}
       propertyPath: m_furnitureSelector.Array.size
       value: 2

@@ -171,10 +171,19 @@ MonoBehaviour:
     m_Id: a4643da6-3da9-43eb-a6f2-78b35426a067
     m_Processors: 
     m_Interactions: 
-    m_SingletonActionBindings: []
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 070b5a6c-77b9-4a19-833a-5b7bd7133587
+      m_Path: <Keyboard>/v
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Remove
+      m_Flags: 0
     m_Flags: 0
   selected: 0
   layer: 100
+  tracker: 0
 --- !u!61 &-5324045413098589316
 BoxCollider2D:
   m_ObjectHideFlags: 0

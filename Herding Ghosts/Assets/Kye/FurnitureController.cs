@@ -22,6 +22,8 @@ public class FurnitureController : MonoBehaviour
 
     public int layer = 0;
 
+    public int tracker;
+
     private void OnEnable()
     {
         furnitureManager = GameObject.FindGameObjectWithTag("FurnitureManager").GetComponent<FurnitureManager>();
@@ -98,7 +100,7 @@ public class FurnitureController : MonoBehaviour
 
     }
 
-    private void PlaceFurniture(InputAction.CallbackContext context)
+    public void PlaceFurniture(InputAction.CallbackContext context)
     {
         if (!m_putDownProtection)
         {

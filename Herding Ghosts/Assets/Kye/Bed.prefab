@@ -197,10 +197,19 @@ MonoBehaviour:
     m_Id: ad5a4a2c-7d87-4ec5-8981-f90c6b9f6b84
     m_Processors: 
     m_Interactions: 
-    m_SingletonActionBindings: []
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 559a945d-70af-4ab7-a02c-78e539e43326
+      m_Path: <Keyboard>/v
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Remove
+      m_Flags: 0
     m_Flags: 0
   selected: 0
   layer: 0
+  tracker: 0
 --- !u!114 &-6819543091912114524
 MonoBehaviour:
   m_ObjectHideFlags: 0

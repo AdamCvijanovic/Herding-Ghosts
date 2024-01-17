@@ -6,17 +6,20 @@ using UnityEngine.InputSystem;
 public class FurnitureManager : MonoBehaviour
 {
 
+    //List<GameObject>[] roomPresets = new List<GameObject>[4];
+    public GameObject[] presets = new GameObject[4];
+
+    public int currentPreset = 0;
+
     List<GameObject> m_createdFurniture = new List<GameObject>();
     List<GameObject> m_availableFurniture = new List<GameObject>();
     public GameObject[] m_furnitureSelector;
 
-
-
-
+    public bool holdingObject = false;
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
@@ -63,6 +66,7 @@ public class FurnitureManager : MonoBehaviour
     public void CreateFurnitureInScene(GameObject furniture)
     {
         m_createdFurniture.Add(furniture);
+    
         Debug.Log(m_createdFurniture.Count);
     }
 
@@ -80,6 +84,21 @@ public class FurnitureManager : MonoBehaviour
                 Destroy(furniture);
         }
         m_createdFurniture.Clear();
+    }
+
+    public void ChangePreset(int newPresetNumber)
+    {
+        presets[currentPreset].SetActive(false);
+
+        currentPreset = newPresetNumber;
+        //m_createdFurniture = roomPresets[currentPreset];
+        
+        presets[currentPreset].SetActive(true);
+    }
+
+    public void SavePreset()
+    {
+        //roomPresets[currentPreset] = m_createdFurniture;
     }
 
 }

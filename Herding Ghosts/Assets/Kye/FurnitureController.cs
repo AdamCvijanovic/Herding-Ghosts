@@ -58,34 +58,38 @@ public class FurnitureController : MonoBehaviour
 
     public void PickUpFurniture()
     {
-        GetComponent<Interactable>().enabled = false;
-        GetComponent<BoxCollider2D>().isTrigger = true;
-       
-        if(!selected)
-            furnitureManager.CreateFurnitureInScene(gameObject);
+        if (!furnitureManager.holdingObject)
+        {
+            furnitureManager.holdingObject = true;
+            GetComponent<Interactable>().enabled = false;
+            GetComponent<BoxCollider2D>().isTrigger = true;
 
-        selected = true;
+            if (!selected)
+                furnitureManager.CreateFurnitureInScene(gameObject);
 
-       
-
-        rotateAction.Enable();
-        rotateAction.performed += RotateFurniture;
-
-        placeAction.Enable();
-        placeAction.performed += PlaceFurniture;
-
-        removeAction.Enable();
-        removeAction.performed += RemoveFurniture;
-
-        var player = GameObject.FindGameObjectWithTag("Player").transform;
-
-        transform.parent = player.GetChild(0);
-        transform.position = new Vector3(player.GetChild(0).transform.position.x - GetComponent<SpriteRenderer>().bounds.size.x, player.GetChild(0).transform.position.y, player.GetChild(0).transform.position.z);
+            selected = true;
 
 
 
-        GameObject.FindGameObjectWithTag("FurnitureManager").GetComponent<FurnitureManager>().ClearFurniture();
-        clickAction.performed -= ClickFurniture;
+            rotateAction.Enable();
+            rotateAction.performed += RotateFurniture;
+
+            placeAction.Enable();
+            placeAction.performed += PlaceFurniture;
+
+            removeAction.Enable();
+            removeAction.performed += RemoveFurniture;
+
+            var player = GameObject.FindGameObjectWithTag("Player").transform;
+
+            transform.parent = player.GetChild(0);
+            transform.position = new Vector3(player.GetChild(0).transform.position.x - GetComponent<SpriteRenderer>().bounds.size.x, player.GetChild(0).transform.position.y, player.GetChild(0).transform.position.z);
+
+
+
+            furnitureManager.ClearFurniture();
+            clickAction.performed -= ClickFurniture;
+        }
     }
 
    private void RotateFurniture(InputAction.CallbackContext context)
@@ -98,7 +102,7 @@ public class FurnitureController : MonoBehaviour
     {
         if (!m_putDownProtection)
         {
-            transform.parent = null;
+            transform.parent = furnitureManager.presets[furnitureManager.currentPreset].transform;
             rotateAction.Disable();
             rotateAction.performed -= RotateFurniture;
 
@@ -113,6 +117,7 @@ public class FurnitureController : MonoBehaviour
             GetComponent<Interactable>().enabled = true;
 
             m_putDownProtection = true;
+            furnitureManager.holdingObject = false;
         }
 
         else

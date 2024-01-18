@@ -201,7 +201,12 @@ MonoBehaviour:
   - {fileID: 1788772153636725926}
   - {fileID: 2636078979855729185}
   - {fileID: 8068177404190337722}
+  rooms:
+  - {fileID: 0}
+  currentPreset: 0
+  currentRoom: -1
   m_furnitureSelector: []
+  holdingObject: 0
 --- !u!1 &1788772153636725926
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,7 +222,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7366136817854863376
 Transform:
   m_ObjectHideFlags: 0
@@ -248,7 +253,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &950041879492443003
 Transform:
   m_ObjectHideFlags: 0
@@ -310,7 +315,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3211797518439268732
 Transform:
   m_ObjectHideFlags: 0

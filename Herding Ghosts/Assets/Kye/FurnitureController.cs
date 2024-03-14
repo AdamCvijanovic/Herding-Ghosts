@@ -24,6 +24,10 @@ public class FurnitureController : MonoBehaviour
 
     public int tracker;
 
+    public Sprite[] rotationSprites;
+
+    public int rotationTracker = 0;
+
     private void OnEnable()
     {
         furnitureManager = GameObject.FindGameObjectWithTag("FurnitureManager").GetComponent<FurnitureManager>();
@@ -96,7 +100,31 @@ public class FurnitureController : MonoBehaviour
 
    private void RotateFurniture(InputAction.CallbackContext context)
     {
-        gameObject.transform.Rotate(0, 0, 90);
+        //gameObject.transform.Rotate(0, 0, 90);
+        
+        if (rotationSprites.Length == 2 && rotationTracker == 0)
+        {
+            rotationTracker = 90;
+            this.GetComponent<SpriteRenderer>().sprite = rotationSprites[1];
+        }
+
+        else if (rotationSprites.Length == 4 && rotationTracker == 90)
+        {
+            rotationTracker = 180;
+            this.GetComponent<SpriteRenderer>().sprite = rotationSprites[2];
+        }
+
+        else if (rotationSprites.Length == 4 && rotationTracker == 180)
+        {
+            rotationTracker = 270;
+            this.GetComponent<SpriteRenderer>().sprite = rotationSprites[3];
+        }
+
+        else if ((rotationSprites.Length == 2 && rotationTracker == 90) || (rotationSprites.Length == 4 && rotationTracker == 270))
+        {
+            rotationTracker = 0;
+            this.GetComponent<SpriteRenderer>().sprite = rotationSprites[0];
+        }
 
     }
 
@@ -141,5 +169,6 @@ public class FurnitureController : MonoBehaviour
         furnitureManager.RemoveFurnitureInScene(gameObject);
         Destroy(gameObject);
 
+        furnitureManager.holdingObject = false;
     }
 }

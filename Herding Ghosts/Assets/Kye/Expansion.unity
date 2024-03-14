@@ -13359,6 +13359,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 272730741210586799, guid: 17f9caa49441a604193d7e3a1f3cc092, type: 3}
   m_PrefabInstance: {fileID: 50944281}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &607235098 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3389227515413765353, guid: d94e3d6a10faae74980c9c518714212f, type: 3}
+  m_PrefabInstance: {fileID: 1652006008}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &637597040
 GameObject:
   m_ObjectHideFlags: 0
@@ -27934,6 +27939,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7063567059088530934, guid: b17c9110fe88d0549aed7b2feeee159f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.16999817
+      objectReference: {fileID: 0}
+    - target: {fileID: 7063567059088530934, guid: b17c9110fe88d0549aed7b2feeee159f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 196.88
+      objectReference: {fileID: 0}
     - target: {fileID: 7356700220326871200, guid: b17c9110fe88d0549aed7b2feeee159f, type: 3}
       propertyPath: audioGrimoireExit
       value: 
@@ -29840,6 +29853,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3684251200314217398, guid: d94e3d6a10faae74980c9c518714212f, type: 3}
+      propertyPath: UI
+      value: 
+      objectReference: {fileID: 607235098}
+    - target: {fileID: 3684251200314217398, guid: d94e3d6a10faae74980c9c518714212f, type: 3}
       propertyPath: clickAction.m_Id
       value: 2147291d-f8fb-4803-9ccf-1dfcfb56530e
       objectReference: {fileID: 0}
@@ -29861,7 +29878,7 @@ PrefabInstance:
       objectReference: {fileID: 1162681808}
     - target: {fileID: 3684251200314217398, guid: d94e3d6a10faae74980c9c518714212f, type: 3}
       propertyPath: m_furnitureSelector.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3684251200314217398, guid: d94e3d6a10faae74980c9c518714212f, type: 3}
       propertyPath: m_furnitureSelector.Array.data[0]
@@ -29869,6 +29886,14 @@ PrefabInstance:
       objectReference: {fileID: 3381300807457949051, guid: e4d5d965a0083a043a253175099951db, type: 3}
     - target: {fileID: 3684251200314217398, guid: d94e3d6a10faae74980c9c518714212f, type: 3}
       propertyPath: m_furnitureSelector.Array.data[1]
+      value: 
+      objectReference: {fileID: 3381300807457949051, guid: f23b5d59af8428f4e85152cd2bea3e89, type: 3}
+    - target: {fileID: 3684251200314217398, guid: d94e3d6a10faae74980c9c518714212f, type: 3}
+      propertyPath: m_furnitureSelector.Array.data[2]
+      value: 
+      objectReference: {fileID: 3381300807457949051, guid: f23b5d59af8428f4e85152cd2bea3e89, type: 3}
+    - target: {fileID: 3684251200314217398, guid: d94e3d6a10faae74980c9c518714212f, type: 3}
+      propertyPath: m_furnitureSelector.Array.data[3]
       value: 
       objectReference: {fileID: 3381300807457949051, guid: f23b5d59af8428f4e85152cd2bea3e89, type: 3}
     - target: {fileID: 3684251200314217398, guid: d94e3d6a10faae74980c9c518714212f, type: 3}

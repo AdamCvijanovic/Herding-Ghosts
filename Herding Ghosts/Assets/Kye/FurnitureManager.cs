@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class FurnitureManager : MonoBehaviour
 {
@@ -33,12 +34,17 @@ public class FurnitureManager : MonoBehaviour
     public int currentRoom = -1;
 
     List<GameObject> m_createdFurniture = new List<GameObject>();
+    int createdStart = 0;
+    int createdEnd = 3;
+
     List<GameObject> m_availableFurniture = new List<GameObject>();
     public GameObject[] m_furnitureSelector;
 
     public bool holdingObject = false;
 
     private string saveLocation;
+    public GameObject UI;
+    public Sprite emptySprite;
     // Start is called before the first frame update
     void Awake()
     {
@@ -64,6 +70,8 @@ public class FurnitureManager : MonoBehaviour
 
                 item.GetComponent<FurnitureController>().PlaceFurniture(new UnityEngine.InputSystem.InputAction.CallbackContext());
                 item.transform.parent = presets[furnitureData.presetNumber].transform;
+                item.GetComponent<FurnitureController>().tracker = furnitureData.tracker;
+                m_createdFurniture.Add(item);
             }
 
             for(int i = 0; i < presets.Length; i++)
@@ -97,23 +105,39 @@ public class FurnitureManager : MonoBehaviour
 
     public void FurnitureAppear()
     {
-        var position = transform.position + new Vector3(-5, -3, 0);
+        UI.SetActive(true);
+        var position = transform.position + new Vector3(-5000, -3, 0);
+        var itemPosition = 0;
 
-        for (int i = 0; i < m_furnitureSelector.Length; i++)
+        for (int i = createdStart; i < createdEnd; i++)
         {
-            var item = Instantiate(m_furnitureSelector[i], position, Quaternion.identity);
-            item.GetComponent<FurnitureController>().tracker = i;
 
-            m_availableFurniture.Add(item);
+            if (i < m_furnitureSelector.Length)
+            {
+                var item = Instantiate(m_furnitureSelector[i], position, Quaternion.identity, UI.transform);
+                item.GetComponent<FurnitureController>().tracker = i;
 
-            position += new Vector3(2, 0, 0);
+                m_availableFurniture.Add(item);
 
+                position += new Vector3(2, 0, 0);
+
+                UI.transform.GetChild(0).GetChild(itemPosition).GetComponent<Image>().sprite = item.GetComponent<SpriteRenderer>().sprite;
+                
+            }
+
+            else
+            {
+                UI.transform.GetChild(0).GetChild(itemPosition).GetComponent<Image>().sprite = emptySprite;
+            }
+            
+            itemPosition++;
         }
 
     }
 
     public void ClearFurniture()
     {
+        UI.SetActive(false);
         foreach (GameObject furniture in m_availableFurniture)
         {
             if(!furniture.GetComponent<FurnitureController>().selected )
@@ -143,6 +167,7 @@ public class FurnitureManager : MonoBehaviour
                 Destroy(furniture);
         }
         m_createdFurniture.Clear();
+        Debug.Log("Removed All");
     }
 
     public void ChangePreset(int newPresetNumber)
@@ -192,6 +217,33 @@ public class FurnitureManager : MonoBehaviour
     public void SavePresets()
     {
         //roomPresets[currentPreset] = m_createdFurniture;
+    }
+
+    public void FurnitureSelectorClick(int number)
+    {
+        m_availableFurniture[number].GetComponent<FurnitureController>().PickUpFurniture();
+    }
+
+    public void FurnitureSelectorForward()
+    {
+        createdStart += 3;
+        createdEnd += 3;
+
+        if (createdStart > m_furnitureSelector.Length)
+        {
+            createdStart = 0;
+            createdEnd = 3;
+        }
+
+
+        foreach (var item in m_availableFurniture)
+        {
+            Destroy(item);
+        }
+        m_availableFurniture.Clear();
+
+
+        FurnitureAppear();
     }
 
 }

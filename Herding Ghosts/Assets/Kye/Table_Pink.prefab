@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3889286201200700655}
   - component: {fileID: 137862871615873063}
   m_Layer: 0
-  m_Name: Table
+  m_Name: Table_Pink
   m_TagString: PlaceableFurniture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5823f1fa5bd8c9f45bd66c1eb8411478, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6a523128314cafe46add90b1a46ce28a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -185,11 +185,9 @@ MonoBehaviour:
   layer: 0
   tracker: 0
   rotationSprites:
-  - {fileID: 21300000, guid: 5823f1fa5bd8c9f45bd66c1eb8411478, type: 3}
-  - {fileID: 21300000, guid: 4834784129a32674bb59fad7a3794ecb, type: 3}
+  - {fileID: 21300000, guid: 6a523128314cafe46add90b1a46ce28a, type: 3}
+  - {fileID: 21300000, guid: e578018349684ca44bc1e0d74f16c4ab, type: 3}
   rotationTracker: 0
-  ghostUse: 0
-  inUse: 0
 --- !u!61 &3889286201200700655
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -207,7 +205,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.84, y: 0.54}
+    oldSize: {x: 0.84, y: 0.56}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

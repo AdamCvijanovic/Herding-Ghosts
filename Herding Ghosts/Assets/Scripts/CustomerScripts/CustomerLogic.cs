@@ -102,7 +102,11 @@ public class CustomerLogic : MonoBehaviour
             }
             _customer.GetConversationTrigger().enabled = false;
 
-            if (dst < minDst)
+
+
+            GetComponent<CustomerDining>().GoToDining();
+
+            /*if (dst < minDst)
             {
 
                 _customer.GetNavigator().SetDestination(customerSpawner.transform);
@@ -114,7 +118,7 @@ public class CustomerLogic : MonoBehaviour
                 //{
                 //    //_customer.AmSatisfied();
                 //}
-            }
+            }*/
         }       
     }
 

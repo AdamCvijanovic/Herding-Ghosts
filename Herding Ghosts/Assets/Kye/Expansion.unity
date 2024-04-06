@@ -22779,6 +22779,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: QuestRewardTest
       objectReference: {fileID: 0}
+    - target: {fileID: 26468735721572844, guid: 7df87a615fda936469e4356c39565c11, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1713858368743031211, guid: 7df87a615fda936469e4356c39565c11, type: 3}
       propertyPath: pickupString
       value: Press E to finish quest
@@ -24712,11 +24716,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2058429255}
-  - {fileID: 48903820}
   - {fileID: 1311161271}
   - {fileID: 861552230}
   - {fileID: 1328698294}
   - {fileID: 1470875734}
+  - {fileID: 48903820}
   m_Father: {fileID: 1255869706}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -31325,11 +31329,11 @@ PrefabInstance:
     - target: {fileID: 3684251200314217398, guid: d94e3d6a10faae74980c9c518714212f, type: 3}
       propertyPath: m_furnitureSelector.Array.data[2]
       value: 
-      objectReference: {fileID: 3381300807457949051, guid: f23b5d59af8428f4e85152cd2bea3e89, type: 3}
+      objectReference: {fileID: 3381300807457949051, guid: fb9fa70fdc1ee24478eeefeb217f4969, type: 3}
     - target: {fileID: 3684251200314217398, guid: d94e3d6a10faae74980c9c518714212f, type: 3}
       propertyPath: m_furnitureSelector.Array.data[3]
       value: 
-      objectReference: {fileID: 3381300807457949051, guid: f23b5d59af8428f4e85152cd2bea3e89, type: 3}
+      objectReference: {fileID: 3381300807457949051, guid: dbf08502fcf726d4cbd5ba3bdc9b9df2, type: 3}
     - target: {fileID: 3684251200314217398, guid: d94e3d6a10faae74980c9c518714212f, type: 3}
       propertyPath: clickAction.m_SingletonActionBindings.Array.size
       value: 1
@@ -31346,6 +31350,10 @@ PrefabInstance:
       propertyPath: clickAction.m_SingletonActionBindings.Array.data[0].m_Action
       value: Click
       objectReference: {fileID: 0}
+    - target: {fileID: 5771888401492442211, guid: d94e3d6a10faae74980c9c518714212f, type: 3}
+      propertyPath: m_ReferencePixelsPerUnit
+      value: 32
+      objectReference: {fileID: 0}
     - target: {fileID: 7750201407886615547, guid: d94e3d6a10faae74980c9c518714212f, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -31354,13 +31362,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8616132014026345904, guid: d94e3d6a10faae74980c9c518714212f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8909938958307828859, guid: d94e3d6a10faae74980c9c518714212f, type: 3}
       propertyPath: m_RootOrder
       value: 37
       objectReference: {fileID: 0}
     - target: {fileID: 8909938958307828859, guid: d94e3d6a10faae74980c9c518714212f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.22
+      value: -16.73
       objectReference: {fileID: 0}
     - target: {fileID: 8909938958307828859, guid: d94e3d6a10faae74980c9c518714212f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -42600,6 +42612,10 @@ PrefabInstance:
     - target: {fileID: 26468735721572844, guid: 70157599eac7abb489c33b0f93fa80bb, type: 3}
       propertyPath: m_Name
       value: Test
+      objectReference: {fileID: 0}
+    - target: {fileID: 26468735721572844, guid: 70157599eac7abb489c33b0f93fa80bb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1713858368743031211, guid: 70157599eac7abb489c33b0f93fa80bb, type: 3}
       propertyPath: pickupString

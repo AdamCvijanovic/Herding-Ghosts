@@ -174,7 +174,7 @@ public class LevelManager : MonoBehaviour
         switch (GameManager.instance.dayNumber)
         {
             case 0:
-                maxCustomerCount = 1;
+                maxCustomerCount = 2;
                 dayNumber = 1;
                 isDayOne = true;
                 GrannyToggle(true);

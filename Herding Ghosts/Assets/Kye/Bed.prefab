@@ -210,6 +210,9 @@ MonoBehaviour:
   selected: 0
   layer: 0
   tracker: 0
+  rotationSprites: []
+  rotationTracker: 0
+  ghostUse: 1
 --- !u!114 &-6819543091912114524
 MonoBehaviour:
   m_ObjectHideFlags: 0

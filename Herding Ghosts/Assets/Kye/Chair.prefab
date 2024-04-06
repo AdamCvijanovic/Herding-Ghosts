@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 3121974790314794379}
   - component: {fileID: 110483169129363832}
   - component: {fileID: 565437389064744994}
-  - component: {fileID: 3889286201200700655}
-  - component: {fileID: 137862871615873063}
+  - component: {fileID: -6819543091912114524}
+  - component: {fileID: 8472473095384141812}
   m_Layer: 0
-  m_Name: Table
+  m_Name: Chair
   m_TagString: PlaceableFurniture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5823f1fa5bd8c9f45bd66c1eb8411478, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6cf8c4652e87ae442a432eca801afe8e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -173,7 +173,7 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: fbf0295f-e9ac-4282-adc2-6de4dc882e66
+      m_Id: 559a945d-70af-4ab7-a02c-78e539e43326
       m_Path: <Keyboard>/v
       m_Interactions: 
       m_Processors: 
@@ -185,38 +185,14 @@ MonoBehaviour:
   layer: 0
   tracker: 0
   rotationSprites:
-  - {fileID: 21300000, guid: 5823f1fa5bd8c9f45bd66c1eb8411478, type: 3}
-  - {fileID: 21300000, guid: 4834784129a32674bb59fad7a3794ecb, type: 3}
+  - {fileID: 21300000, guid: 6cf8c4652e87ae442a432eca801afe8e, type: 3}
+  - {fileID: 21300000, guid: ec2a48ab53f55274cb78b232d943a2e1, type: 3}
+  - {fileID: 21300000, guid: 746e5f75e775c614e97c63d046741504, type: 3}
+  - {fileID: 21300000, guid: 3a60d62a22f6e814b92377136de2b046, type: 3}
   rotationTracker: 0
-  ghostUse: 0
+  ghostUse: 1
   inUse: 0
---- !u!61 &3889286201200700655
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3381300807457949051}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.2841903}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.84, y: 0.54}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.75, y: 1.0316193}
-  m_EdgeRadius: 0
---- !u!114 &137862871615873063
+--- !u!114 &-6819543091912114524
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -248,3 +224,29 @@ MonoBehaviour:
         m_CallState: 2
   pickupString: Press E to pickup
   useString: 
+--- !u!61 &8472473095384141812
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3381300807457949051}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.625, y: 1.125}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.625, y: 1.125}
+  m_EdgeRadius: 0

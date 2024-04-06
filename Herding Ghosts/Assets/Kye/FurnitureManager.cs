@@ -23,7 +23,7 @@ public class FurnitureManager : MonoBehaviour
         public int tracker;
         public int presetNumber;
         public Vector3 position;
-        public Quaternion rotation;
+        public int rotationTracker;
     }
 
     //List<GameObject>[] roomPresets = new List<GameObject>[4];
@@ -33,7 +33,8 @@ public class FurnitureManager : MonoBehaviour
     public int currentPreset = 0;
     public int currentRoom = -1;
 
-    List<GameObject> m_createdFurniture = new List<GameObject>();
+    [HideInInspector]
+    public List<GameObject> m_createdFurniture = new List<GameObject>();
     int createdStart = 0;
     int createdEnd = 3;
 
@@ -66,10 +67,14 @@ public class FurnitureManager : MonoBehaviour
 
             foreach (FurnitureData furnitureData in roomData.furnitureList)
             {
-                var item = Instantiate(m_furnitureSelector[furnitureData.tracker], furnitureData.position, furnitureData.rotation);
+                var item = Instantiate(m_furnitureSelector[furnitureData.tracker], furnitureData.position, Quaternion.identity);
+
+               
 
                 item.GetComponent<FurnitureController>().PlaceFurniture(new UnityEngine.InputSystem.InputAction.CallbackContext());
                 item.transform.parent = presets[furnitureData.presetNumber].transform;
+                item.GetComponent<FurnitureController>().ManualRotate(furnitureData.rotationTracker);
+
                 item.GetComponent<FurnitureController>().tracker = furnitureData.tracker;
                 m_createdFurniture.Add(item);
             }
@@ -201,7 +206,7 @@ public class FurnitureManager : MonoBehaviour
             {
                 var data = new FurnitureData();
                 data.position = child.transform.position;
-                data.rotation = child.transform.rotation;
+                data.rotationTracker = child.transform.gameObject.GetComponent<FurnitureController>().rotationTracker;
                 data.presetNumber = i;
                 data.tracker = child.transform.gameObject.GetComponent<FurnitureController>().tracker;
 

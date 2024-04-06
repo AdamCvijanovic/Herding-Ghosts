@@ -28,6 +28,11 @@ public class FurnitureController : MonoBehaviour
 
     public int rotationTracker = 0;
 
+
+    public bool ghostUse = false;
+
+    public bool inUse = false;
+
     private void OnEnable()
     {
         furnitureManager = GameObject.FindGameObjectWithTag("FurnitureManager").GetComponent<FurnitureManager>();
@@ -98,23 +103,48 @@ public class FurnitureController : MonoBehaviour
         }
     }
 
+    public void ManualRotate(int direction)
+    {
+
+            switch (direction)
+            {
+                case 0:
+                    this.GetComponent<SpriteRenderer>().sprite = rotationSprites[0];
+                    break;
+                case 90:
+                    this.GetComponent<SpriteRenderer>().sprite = rotationSprites[1];
+                    break;
+                case 180:
+                    this.GetComponent<SpriteRenderer>().sprite = rotationSprites[2];
+                    break;
+                case 270:
+                    this.GetComponent<SpriteRenderer>().sprite = rotationSprites[3];
+                    break;
+                default:
+                    this.GetComponent<SpriteRenderer>().sprite = rotationSprites[0];
+                    break;
+            }
+
+            rotationTracker = direction;
+    }
+
    private void RotateFurniture(InputAction.CallbackContext context)
     {
         //gameObject.transform.Rotate(0, 0, 90);
         
-        if (rotationSprites.Length == 2 && rotationTracker == 0)
+        if ((rotationSprites.Length == 2 || rotationSprites.Length == 4) && rotationTracker == 0)
         {
             rotationTracker = 90;
             this.GetComponent<SpriteRenderer>().sprite = rotationSprites[1];
         }
 
-        else if (rotationSprites.Length == 4 && rotationTracker == 90)
+        else if (( rotationSprites.Length == 4) && rotationTracker == 90)
         {
             rotationTracker = 180;
             this.GetComponent<SpriteRenderer>().sprite = rotationSprites[2];
         }
 
-        else if (rotationSprites.Length == 4 && rotationTracker == 180)
+        else if ((rotationSprites.Length == 4) && rotationTracker == 180)
         {
             rotationTracker = 270;
             this.GetComponent<SpriteRenderer>().sprite = rotationSprites[3];

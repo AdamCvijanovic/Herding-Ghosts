@@ -26,6 +26,10 @@ public class TileMapTriggerConvert : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        collision.gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
+        if (collision.CompareTag("PlaceableFurniture"))
+        {
+            collision.gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
+
+        }
     }
 }

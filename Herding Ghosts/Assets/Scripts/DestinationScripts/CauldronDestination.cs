@@ -119,6 +119,8 @@ public class CauldronDestination : WorkstationDestination
 
     public override void RecipeCook(RecipeObject recipeIn)
     {
+
+        Debug.Log(recipeIn.name);
         this.OnSuccess.Invoke();
         base.RecipeCook(recipeIn);
         Debug.Log("Recipe has been cooked!");

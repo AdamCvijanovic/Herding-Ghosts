@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class YSorter : MonoBehaviour
 {
@@ -16,6 +17,11 @@ public class YSorter : MonoBehaviour
 
     private void LateUpdate()
     {
+        if(spriteRenderer != null)    
             spriteRenderer.sortingOrder = Mathf.RoundToInt(transform.position.y * -100 + modifier);
+
+        else
+            GetComponent<TilemapRenderer>().sortingOrder = Mathf.RoundToInt(transform.position.y * -100 + modifier);
+
     }
 }

@@ -251,6 +251,55 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &352532420
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 352532422}
+  - component: {fileID: 352532421}
+  m_Layer: 0
+  m_Name: Cursor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &352532421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352532420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e9f3987451d2b74a857e23b26406f79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursors:
+  - {fileID: 2800000, guid: 038e3d5b5dd2d284c80bb9375a92a9ec, type: 3}
+  - {fileID: 2800000, guid: 3766d647b833a684c97eeee848a28e01, type: 3}
+  - {fileID: 2800000, guid: c0d1a53ba82201b4aa45fb49022c27e9, type: 3}
+  - {fileID: 2800000, guid: 5fb1b3c40913e1947b51cf22d96e4a7d, type: 3}
+--- !u!4 &352532422
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352532420}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.2803717, y: 3.9254591, z: 0.080427475}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &522162000 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8191973524237226330, guid: 69e78ad0d2b8b054a8f2f25ad382a7e5, type: 3}
@@ -1169,6 +1218,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 259788337, guid: 69e78ad0d2b8b054a8f2f25ad382a7e5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1140840791232323539, guid: 69e78ad0d2b8b054a8f2f25ad382a7e5, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1288,6 +1341,24 @@ PrefabInstance:
     - target: {fileID: 8191973523673725341, guid: 69e78ad0d2b8b054a8f2f25ad382a7e5, type: 3}
       propertyPath: m_Name
       value: MainMenu_Canvas_New
+      objectReference: {fileID: 0}
+    - target: {fileID: 8191973524113909708, guid: 69e78ad0d2b8b054a8f2f25ad382a7e5, type: 3}
+      propertyPath: m_text
+      value: 'Producer: Steven Aldrich
+
+        Tech Lead: Adam Cvijanovic
+
+        Art
+        Lead: Lily Watson
+
+        Marketing Lead: Kye Horbury
+
+        Design Lead:
+        Brendan Jamieson
+
+        Sound Designer: John Waterfield
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 8191973524237226340, guid: 69e78ad0d2b8b054a8f2f25ad382a7e5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target

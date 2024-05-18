@@ -109,8 +109,8 @@ MonoBehaviour:
   sprRndr: {fileID: 6683675136658944998}
   defaultMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   highlightMaterial: {fileID: 2100000, guid: ffac07a7dd4560e4692a12b1ab790c40, type: 2}
-  pickupString: 'Press E to pickup: '
-  useString: 'Press E to Drop: '
+  pickupString: Mushroom Seeds
+  useString: 
   ingredientType: 8
   plantPrefab: {fileID: 2486786818022151899, guid: e99c21ec5f5ddec45936838e2f8e5f7a, type: 3}
 --- !u!61 &6683675136658944996

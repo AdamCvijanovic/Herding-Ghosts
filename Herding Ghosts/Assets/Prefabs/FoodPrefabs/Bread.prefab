@@ -196,8 +196,8 @@ MonoBehaviour:
   sprRndr: {fileID: 0}
   defaultMaterial: {fileID: 2100000, guid: 05fd07fc76aa97a4d89317802d47d40c, type: 2}
   highlightMaterial: {fileID: 2100000, guid: ffac07a7dd4560e4692a12b1ab790c40, type: 2}
-  pickupString: 'Press E to pickup: Bread'
-  useString: 'Press E to Drop: '
+  pickupString: Bread
+  useString: 
   foodType: 3
   foodSprite: {fileID: 21300000, guid: 02d976b8c01497b4496be494429cf19b, type: 3}
   recipeObj: {fileID: 11400000, guid: 68a94094ab8613e42b79157263e1f1fc, type: 2}

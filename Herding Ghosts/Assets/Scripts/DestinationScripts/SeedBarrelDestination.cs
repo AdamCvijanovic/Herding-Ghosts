@@ -51,7 +51,9 @@ public class SeedBarrelDestination : Destination
         {
             if (i.GetComponent<SeedBag>().GetIngredientType() == ingredientType)
             {
-                Instantiate(i, spawnPosition.transform.position, Quaternion.identity);
+                GameObject seedbagObj = Instantiate(i, spawnPosition.transform.position, Quaternion.identity);
+                //Add object to player hands
+                FindObjectOfType<PlayerPickup>().PickupItem(seedbagObj.GetComponent<Item>());
             }
         }
     }

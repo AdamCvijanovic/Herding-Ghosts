@@ -255,6 +255,7 @@ GameObject:
   - component: {fileID: 6932405315982681536}
   - component: {fileID: 1852324230}
   - component: {fileID: 6892144361440663795}
+  - component: {fileID: 164635966}
   m_Layer: 0
   m_Name: ChatArea
   m_TagString: Untagged
@@ -277,7 +278,7 @@ Transform:
   - {fileID: 1881337888}
   - {fileID: 1649787084}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6932405315982681548
 SpriteRenderer:
@@ -361,7 +362,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  pickupString: Press E to Interact
+  pickupString: Crystal Ball
   useString: 
 --- !u!114 &6932405315982681550
 MonoBehaviour:
@@ -379,26 +380,23 @@ MonoBehaviour:
     playerName: Lavender
     customerName: Granny Fluffins
     sentences:
-    - Good morning Lavender. I hope your looking forward to another day of baking,
-      gardening and selling.
-    - When a customer enters the Shop (top left) make sure to pay attention to what
-      they want my dear, cant be giving a customer the wrong thing now can't we.
-    - Those ingredients can be tricky to work with so make sure to craft your food
-      in the correct pattern and if you make a mistake you can use the leaver to
-      flush the failed mess away.
-    - Remember to keep an eye on the Greenhouse and Pantry, wouldnt want to run out
-      of something and leave the customer waiting too long.
-    - (customer orders will have a time limit, once you have finished talking to
-      them the timer starts, take too long and the customer will leave lowering your
-      score)
-    - (To craft a tasty treat you must gather the ingredients from either the Greenhouse
-      or the Pantry, both located in the upper right of the map)
-    - 'And remember to take a look at my old grimoire in case you need a reminder
-      on the recipies dear.
+    - 'Good morning dear! '
+    - I hope the pesky little house spirits don't cause you too much trouble. To
+      banish them use your trusty Broom. They'll leave a bit of residue behind called
+      Ectoplasm.
+    - 'As for running the Bakery~ '
+    - "First you'll need to open the store by changing the shop sign to Open. \r\nThen
+      grab the customer's order and put it on the chalkboard so you don't forget!\r"
+    - Customers won't wait forever, so pay attention to the timer ticking down and
+      try your best to deliver their order before it runs out!
+    - "The Recipes and Ingredients are in my old Grimoire (TAB), along with some
+      notes and things you might find useful!\r"
+    - Ingredients can be grown in your Greenhouse from seeds or collected from the
+      Pantry.
+    - 'Did you get all that dear? Just talk to me again if you''re confused.
 
-
-
-      (Press TAB to open grimoire)'
+      Have
+      a great day and good luck!'
   talkNow: 0
 --- !u!61 &6932405315982681536
 BoxCollider2D:
@@ -439,8 +437,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.23049521}
-  m_Size: {x: 1, y: 1.538466}
+  m_Offset: {x: 0, y: -0.4997282}
+  m_Size: {x: 1, y: 1}
   m_Direction: 0
 --- !u!114 &6892144361440663795
 MonoBehaviour:
@@ -454,3 +452,100 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb07c8636e19cb41b28aa444394e0db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  modifier: 0
+--- !u!82 &164635966
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6932405315982681539}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 169f26348c6f3b846bb34fad5b4f8717, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 0
+  MinDistance: 2.5
+  MaxDistance: 4.5
+  Pan2D: 0
+  rolloffMode: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.25
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

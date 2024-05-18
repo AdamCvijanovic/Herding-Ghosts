@@ -197,8 +197,8 @@ MonoBehaviour:
   sprRndr: {fileID: 0}
   defaultMaterial: {fileID: 2100000, guid: 05fd07fc76aa97a4d89317802d47d40c, type: 2}
   highlightMaterial: {fileID: 2100000, guid: ffac07a7dd4560e4692a12b1ab790c40, type: 2}
-  pickupString: 'Press E to pickup: '
-  useString: 'Press E to Drop: '
+  pickupString: Carrot
+  useString: 
   foodType: 2
 --- !u!114 &5517497033082960623
 MonoBehaviour:

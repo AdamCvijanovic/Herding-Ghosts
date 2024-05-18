@@ -465,7 +465,6 @@ RectTransform:
   m_Children:
   - {fileID: 999512493}
   - {fileID: 1900946394}
-  - {fileID: 1387617611}
   - {fileID: 443627179}
   m_Father: {fileID: 1513597620}
   m_RootOrder: -1
@@ -765,7 +764,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 142245c210defb94cb8d80bea2cd4002, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 40b6f6c0f9da43d4ab347d20fda9696f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -915,8 +914,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attenuationObject: {fileID: 0}
-  ListenerNumber: -1
 --- !u!114 &993119019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -929,24 +926,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 1714357424
-      Data2: 1236672886
-      Data3: -1979507285
-      Data4: -242805168
-    Path: event:/BGMusic
-  Event: 
-  PlayEvent: 11
-  StopEvent: 12
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!1 &999512492
 GameObject:
   m_ObjectHideFlags: 0
@@ -983,7 +962,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -7.909912, y: 73.72742}
+  m_AnchoredPosition: {x: -7.909912, y: 162}
   m_SizeDelta: {x: 258.5176, y: 39.545288}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &999512494
@@ -1105,103 +1084,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!1 &1213124244
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1213124245}
-  - component: {fileID: 1213124248}
-  - component: {fileID: 1213124247}
-  - component: {fileID: 1213124246}
-  m_Layer: 5
-  m_Name: MusicCreditsBG
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1213124245
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1213124244}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1513597620}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &1213124246
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1213124244}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1213124247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1213124244}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c3a35031d9189d8479d40e2235c492bd, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1213124248
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1213124244}
-  m_CullTransparentMesh: 1
 --- !u!1 &1272065815
 GameObject:
   m_ObjectHideFlags: 0
@@ -1264,9 +1146,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvasManager: {fileID: 0}
   uiFadeInOut: {fileID: 0}
+  globalLight: {fileID: 0}
   dayColor: {r: 0, g: 0, b: 0, a: 0}
   nightColor: {r: 0, g: 0, b: 0, a: 0}
+  colorTime: 0
+  bed: {fileID: 0}
+  granny: {fileID: 0}
   maxCustomerCount: 0
+  dayNumber: 0
+  remainingCustomers: 0
+  isDayOne: 0
+  isStoreOpen: 0
+  minCustomersServed: 0
   _ActivateEvent:
     m_PersistentCalls:
       m_Calls:
@@ -1394,164 +1285,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!1 &1387617610
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1387617611}
-  - component: {fileID: 1387617613}
-  - component: {fileID: 1387617612}
-  - component: {fileID: 1387617614}
-  m_Layer: 5
-  m_Name: MusicCreditsTXT
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1387617611
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1387617610}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 769996929}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.8953857, y: -43}
-  m_SizeDelta: {x: 450.8613, y: 54.204285}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1387617612
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1387617610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: "<b><size=30>Menu Theme</size=30>\r</b>\nBirdsinneon\n\n<b><size=30>Game
-    Background Music</size=30>\r</b>\nBirdsinneon\n\n<b><size=30>Cutscene Music\r</size=30>\r</b>\nEight
-    Lausevic\n\n<b><size=30>Sound FX\r</size=30>\r</b>\nEight Lausevic\n\n\n"
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 701bedb04bce43541a48c96f8d09f51d, type: 2}
-  m_sharedMaterial: {fileID: -2140096229205822652, guid: 701bedb04bce43541a48c96f8d09f51d, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 25
-  m_fontSizeBase: 25
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &1387617613
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1387617610}
-  m_CullTransparentMesh: 1
---- !u!95 &1387617614
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1387617610}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1513597616
 GameObject:
   m_ObjectHideFlags: 0
@@ -1647,7 +1380,6 @@ RectTransform:
   m_Children:
   - {fileID: 405163593}
   - {fileID: 892625833}
-  - {fileID: 1213124245}
   - {fileID: 848718970}
   - {fileID: 1273908411}
   - {fileID: 852874837}
@@ -1698,8 +1430,6 @@ PlayableDirector:
     value: {fileID: 999512496}
   - key: {fileID: 3350453259708880532, guid: 12ba7174a1213e14585679105d394fa3, type: 2}
     value: {fileID: 1900946397}
-  - key: {fileID: 2211551039571686811, guid: 12ba7174a1213e14585679105d394fa3, type: 2}
-    value: {fileID: 1387617614}
   - key: {fileID: -7119631951473657533, guid: 12ba7174a1213e14585679105d394fa3, type: 2}
     value: {fileID: 443627182}
   - key: {fileID: 8166605390425394026, guid: 12ba7174a1213e14585679105d394fa3, type: 2}
@@ -1707,7 +1437,7 @@ PlayableDirector:
   - key: {fileID: -4265369938827087900, guid: 12ba7174a1213e14585679105d394fa3, type: 2}
     value: {fileID: 1273908414}
   - key: {fileID: 5078430597279405560, guid: 12ba7174a1213e14585679105d394fa3, type: 2}
-    value: {fileID: 1213124246}
+    value: {fileID: 0}
   - key: {fileID: -7032644323263932461, guid: 12ba7174a1213e14585679105d394fa3, type: 2}
     value: {fileID: 1272065816}
   m_ExposedReferences:
@@ -1767,7 +1497,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.8953857, y: -28.399994}
+  m_AnchoredPosition: {x: -4.8953857, y: 69}
   m_SizeDelta: {x: 450.8613, y: 54.204285}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1900946395
@@ -1791,9 +1521,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "<b><size=30>Producer</size=30>\r</b>\nSteven Aldrin\r\n\n<b><size=30>Tech
-    Lead</size=30>\r</b>\nAdam Cvijanovic\r\n\n<b><size=30>Design Lead</size=30>\r</b>\nBrendan
-    Jamieson\r\n\n<b><size=30>Art Lead</size=30>\r</b>\nLily Watson\r\n\n<b><size=30>Test
-    & Marketing Lead</size=30>\r</b>\nDominic Dijkstra\r\n\n\n"
+    Lead</size=30>\r</b>\nAdam Cvijanovic\r\n\n<b><size=30>Music & SFX</size=30>\r</b>\nJohn
+    Waterfield\n\n<b><size=30>Design Lead</size=30>\r</b>\nBrendan Jamieson\r\n\n<b><size=30>Art
+    & Marketing Lead</size=30>\r</b>\nLily Watson\r\n\n<b><size=30>Programmer</size=30>\r</b>\nKye
+    Horbury\n\n<b><size=30> Former Test & Marketing Lead</size=30>\r</b>\nDominic
+    Dijkstra\r\n\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 701bedb04bce43541a48c96f8d09f51d, type: 2}
   m_sharedMaterial: {fileID: -2140096229205822652, guid: 701bedb04bce43541a48c96f8d09f51d, type: 2}

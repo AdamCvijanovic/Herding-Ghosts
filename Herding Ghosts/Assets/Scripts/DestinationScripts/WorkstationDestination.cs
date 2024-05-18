@@ -139,12 +139,19 @@ public class WorkstationDestination : Destination
         bool[] ingredient = new bool[3] { false, false, false } ;
 
 
+
+        List<Item> tempInventory = new List<Item>(_inventory._items);
+
         for (int i = 0; i < 3; i++)
         {
-            for (int j = 0; j < 3; j++)
+            for (int j = 0; j < tempInventory.Count; j++)
             {
-                if (_inventory._items[j].GetIngredientType() == recipeIn.ingredient[i])
+                if (tempInventory[j].GetIngredientType() == recipeIn.ingredient[i])
+                {
                     ingredient[i] = true;
+                    tempInventory.RemoveAt(j);
+                    break;
+                }
             }
         }
 

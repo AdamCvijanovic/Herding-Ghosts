@@ -109,8 +109,8 @@ MonoBehaviour:
   sprRndr: {fileID: 8814417932616371229}
   defaultMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   highlightMaterial: {fileID: 2100000, guid: ffac07a7dd4560e4692a12b1ab790c40, type: 2}
-  pickupString: 'Press E to pickup: '
-  useString: 'Press E to Drop: '
+  pickupString: Carrot Seeds
+  useString: 
   ingredientType: 2
   plantPrefab: {fileID: 3338544383139654284, guid: a599e4dd8ff18214896d6eb31c0e7b49, type: 3}
 --- !u!61 &8814417932616371230

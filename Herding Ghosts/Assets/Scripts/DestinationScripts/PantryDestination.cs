@@ -41,7 +41,8 @@ public class PantryDestination : Destination
         {
             if(i.GetComponent<IngredientItem>().GetIngredientType() == ingredientType)
             {
-                Instantiate(i, spawnPosition.transform.position, Quaternion.identity);
+                GameObject newItem = Instantiate(i, spawnPosition.transform.position, Quaternion.identity);
+                FindObjectOfType<PlayerPickup>().PickupItem(newItem.GetComponent<Item>());
             }
         }
     }

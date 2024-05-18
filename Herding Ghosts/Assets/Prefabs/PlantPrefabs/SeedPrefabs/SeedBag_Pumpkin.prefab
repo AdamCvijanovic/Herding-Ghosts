@@ -109,8 +109,8 @@ MonoBehaviour:
   sprRndr: {fileID: 3149776519001545784}
   defaultMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   highlightMaterial: {fileID: 2100000, guid: ffac07a7dd4560e4692a12b1ab790c40, type: 2}
-  pickupString: 'Press E to pickup: '
-  useString: 'Press E to Drop: '
+  pickupString: Pumpkin Seeds
+  useString: 
   ingredientType: 7
   plantPrefab: {fileID: 3338544383139654284, guid: 8f69390d8ad1e37498f8f09000180fae, type: 3}
 --- !u!61 &3149776519001545786

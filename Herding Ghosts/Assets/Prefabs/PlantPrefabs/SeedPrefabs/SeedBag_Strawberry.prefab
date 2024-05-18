@@ -109,8 +109,8 @@ MonoBehaviour:
   sprRndr: {fileID: 2683349768714578813}
   defaultMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   highlightMaterial: {fileID: 2100000, guid: ffac07a7dd4560e4692a12b1ab790c40, type: 2}
-  pickupString: 'Press E to pickup: '
-  useString: 'Press E to Drop: '
+  pickupString: Strawberry Seeds
+  useString: 
   ingredientType: 10
   plantPrefab: {fileID: 8594032086745102863, guid: 61e4659a58b34fa4eb65427922a90de8, type: 3}
 --- !u!61 &2683349768714578814

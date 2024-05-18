@@ -323,6 +323,17 @@
                 },
                 {
                     "name": "",
+                    "id": "e314be65-9299-42d8-835c-b85f3f4ab738",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ToggleGrimoire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "e734c8ea-771d-4e95-8e30-8e6763d455b7",
                     "path": "<Mouse>/rightButton",
                     "interactions": "",

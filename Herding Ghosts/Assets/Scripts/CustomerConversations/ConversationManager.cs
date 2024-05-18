@@ -135,8 +135,8 @@ public class ConversationManager : MonoBehaviour
         CustomerManager mngr = customer.GetCustomerManager();
         GameObject foodPrefab = mngr.FindFoodFromEnum(foodtype);
 
-        Debug.Log("Food Sprite " + foodPrefab.GetComponent<FoodItem>().foodSprite.name);
-        foodName = foodPrefab.GetComponent<FoodItem>().foodSprite.name;
+        Debug.Log("Food Sprite " + foodPrefab.GetComponent<FoodItem>().name);
+        foodName = foodPrefab.GetComponent<FoodItem>().name;
     }
 
     public void SetCustomerSprite(Sprite cusImage)

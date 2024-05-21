@@ -10,6 +10,7 @@ TagManager:
   - FurnitureManager
   - PlaceableFurniture
   - Crops
+  - Perimeter
   layers:
   - Default
   - TransparentFX

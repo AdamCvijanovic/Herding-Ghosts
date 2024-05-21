@@ -15132,7 +15132,7 @@ GameObject:
   - component: {fileID: 752916001}
   m_Layer: 0
   m_Name: Enlarge (1)
-  m_TagString: Untagged
+  m_TagString: Perimeter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35581,6 +35581,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FurnitureVaporizer
       objectReference: {fileID: 0}
+    - target: {fileID: 3381300807457949051, guid: 8ad2213fccc24dc48815b0fe11deb936, type: 3}
+      propertyPath: m_TagString
+      value: Perimeter
+      objectReference: {fileID: 0}
     - target: {fileID: 4795017059898380634, guid: 8ad2213fccc24dc48815b0fe11deb936, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -35629,6 +35633,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5494907424769022627, guid: 8ad2213fccc24dc48815b0fe11deb936, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9148970745454560878, guid: 8ad2213fccc24dc48815b0fe11deb936, type: 3}
       propertyPath: m_Size.x
       value: 2.449782
@@ -35647,6 +35655,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
+    - {fileID: 5494907424769022627, guid: 8ad2213fccc24dc48815b0fe11deb936, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ad2213fccc24dc48815b0fe11deb936, type: 3}
 --- !u!1 &1821512422

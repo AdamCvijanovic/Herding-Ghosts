@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,6 +17,9 @@ public class FurnitureController : MonoBehaviour
 
     public InputAction removeAction;
 
+    public InputAction movement;
+
+
     public bool selected = false;
 
     private bool m_putDownProtection = false;
@@ -33,6 +37,13 @@ public class FurnitureController : MonoBehaviour
 
     public bool inUse = false;
 
+    private bool startLineRenderer = false;
+
+    private bool preventPlace = false;
+
+    private bool isBeingHeld = false;
+
+    private Vector2 currentDirection = Vector2.zero;
     private void OnEnable()
     {
         furnitureManager = GameObject.FindGameObjectWithTag("FurnitureManager").GetComponent<FurnitureManager>();
@@ -53,6 +64,12 @@ public class FurnitureController : MonoBehaviour
 
     private void Update()
     {
+        if (startLineRenderer)
+        {
+            //SetupLineRenderer();
+            DisplayCollider();
+
+        }
     }
 
     private void ClickFurniture(InputAction.CallbackContext context)
@@ -72,7 +89,8 @@ public class FurnitureController : MonoBehaviour
         if (!furnitureManager.holdingObject)
         {
             furnitureManager.holdingObject = true;
-            GetComponent<Interactable>().enabled = false;
+            isBeingHeld = true;
+
             GetComponent<BoxCollider2D>().isTrigger = true;
 
             if (!selected)
@@ -95,6 +113,14 @@ public class FurnitureController : MonoBehaviour
 
             transform.parent = player.GetChild(0);
             transform.position = new Vector3(player.GetChild(0).transform.position.x - GetComponent<SpriteRenderer>().bounds.size.x, player.GetChild(0).transform.position.y, player.GetChild(0).transform.position.z);
+            transform.parent = null;
+
+            player.GetChild(0).gameObject.GetComponent<PlayerMove>().enabled = false;
+            player.GetChild(0).gameObject.GetComponent<PlayerInput>().enabled = false;
+            player.GetChild(1).GetComponent<CinemachineVirtualCamera>().Follow = transform;
+            movement.Enable();
+            movement.performed += MovedObject;
+            SetupLineRenderer();
 
 
 
@@ -103,7 +129,34 @@ public class FurnitureController : MonoBehaviour
         }
     }
 
-    public void ManualRotate(int direction)
+    public void MovedObject(InputAction.CallbackContext context)
+    {
+        var buttonPress = context.ReadValue<Vector2>();
+        currentDirection = buttonPress * -1;
+        var combo = (buttonPress);
+
+
+        switch (combo)
+        {
+            case Vector2 when combo.Equals(Vector2.up):
+                transform.position += Vector3.up / 2;
+                break;
+            case Vector2 when combo.Equals(Vector2.down):
+                transform.position += Vector3.down / 2;
+                break;
+            case Vector2 when combo.Equals(Vector2.left):
+                transform.position += Vector3.left / 2;
+                break;
+
+            case Vector2 when combo.Equals(Vector2.right):
+                transform.position += Vector3.right / 2;
+                break;
+
+
+        }
+    }
+
+        public void ManualRotate(int direction)
     {
 
             switch (direction)
@@ -130,8 +183,14 @@ public class FurnitureController : MonoBehaviour
 
    private void RotateFurniture(InputAction.CallbackContext context)
     {
-        //gameObject.transform.Rotate(0, 0, 90);
-        
+        var col = GetComponent<BoxCollider2D>();
+
+        if (col != null)
+        {
+            col.size = new Vector2(col.size.y, col.size.x);
+            col.size = new Vector2(Mathf.Ceil(col.size.x * 2) / 2.0f, Mathf.Ceil(col.size.y * 2) / 2.0f);
+        }
+
         if ((rotationSprites.Length == 2 || rotationSprites.Length == 4) && rotationTracker == 0)
         {
             rotationTracker = 90;
@@ -160,7 +219,7 @@ public class FurnitureController : MonoBehaviour
 
     public void PlaceFurniture(InputAction.CallbackContext context)
     {
-        if (!m_putDownProtection)
+        if (!m_putDownProtection && !preventPlace)
         {
             transform.parent = furnitureManager.presets[furnitureManager.currentPreset].transform;
             rotateAction.Disable();
@@ -174,10 +233,23 @@ public class FurnitureController : MonoBehaviour
 
             GetComponent<BoxCollider2D>().isTrigger = false;
 
-            GetComponent<Interactable>().enabled = true;
+
+
+            if (startLineRenderer)
+            {
+                var player = GameObject.FindGameObjectWithTag("Player").transform;
+                player.GetChild(0).gameObject.GetComponent<PlayerMove>().enabled = true;
+                player.GetChild(0).gameObject.GetComponent<PlayerInput>().enabled = true;
+                player.GetChild(1).GetComponent<CinemachineVirtualCamera>().Follow = player.GetChild(0);
+                movement.Disable();
+                movement.performed -= MovedObject;
+                startLineRenderer = false;
+                GetComponent<LineRenderer>().enabled = false;
+            }
 
             m_putDownProtection = true;
             furnitureManager.holdingObject = false;
+            isBeingHeld = false;
         }
 
         else
@@ -196,9 +268,109 @@ public class FurnitureController : MonoBehaviour
         removeAction.Disable();
         placeAction.performed -= RemoveFurniture;
 
+        if (startLineRenderer)
+        {
+            var player = GameObject.FindGameObjectWithTag("Player").transform;
+            player.GetChild(0).gameObject.GetComponent<PlayerMove>().enabled = true;
+            player.GetChild(0).gameObject.GetComponent<PlayerInput>().enabled = true;
+            player.GetChild(1).GetComponent<CinemachineVirtualCamera>().Follow = player.GetChild(0);
+            movement.Disable();
+            movement.performed -= MovedObject;
+            startLineRenderer = false;
+            GetComponent<LineRenderer>().enabled = false;
+        }
+
         furnitureManager.RemoveFurnitureInScene(gameObject);
         Destroy(gameObject);
 
         furnitureManager.holdingObject = false;
+    }
+
+
+    void SetupLineRenderer()
+    {
+        var boxCollider = GetComponent<BoxCollider2D>();
+        var lineRenderer = GetComponent<LineRenderer>();
+
+
+        boxCollider.size = new Vector2(Mathf.Ceil(boxCollider.size.x * 2) / 2.0f, Mathf.Ceil(boxCollider.size.y * 2) / 2.0f);
+        transform.position = new Vector3(Mathf.Ceil(transform.position.x * 2) / 2.0f, Mathf.Ceil(transform.position.y * 2) / 2.0f, 0);
+
+        lineRenderer.enabled = true;
+        lineRenderer.positionCount = 5;
+        lineRenderer.loop = true;
+        lineRenderer.startWidth = 0.05f;
+        lineRenderer.endWidth = 0.05f;
+        lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
+        lineRenderer.startColor = Color.magenta;
+        lineRenderer.endColor = Color.magenta;
+
+        startLineRenderer = true;
+
+       
+       
+
+
+    }
+
+    void DisplayCollider()
+    {
+        var boxCollider = GetComponent<BoxCollider2D>();
+        var lineRenderer = GetComponent<LineRenderer>();
+
+        Vector2 size = boxCollider.size;
+        Vector2 offset = boxCollider.offset;
+        Vector2 position = transform.position;
+
+
+        Vector3[] corners = new Vector3[5];
+        corners[0] = new Vector3(position.x + offset.x - size.x / 2, position.y + offset.y - size.y / 2, 0); 
+        corners[1] = new Vector3(position.x + offset.x + size.x / 2, position.y + offset.y - size.y / 2, 0); 
+        corners[2] = new Vector3(position.x + offset.x + size.x / 2, position.y + offset.y + size.y / 2, 0); 
+        corners[3] = new Vector3(position.x + offset.x - size.x / 2, position.y + offset.y + size.y / 2, 0); 
+        corners[4] = corners[0];
+      
+
+        lineRenderer.SetPositions(corners);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (furnitureManager.holdingObject && isBeingHeld)
+        {
+            if (collision.gameObject.CompareTag("PlaceableFurniture") || collision.gameObject.CompareTag("Player"))
+            {
+                AntiPlacement(Color.red, true);
+            }
+
+            if(collision.gameObject.CompareTag("Perimeter"))
+            {
+                transform.position += new Vector3 (currentDirection.x, currentDirection.y, 0) / 2;
+
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (furnitureManager.holdingObject && isBeingHeld)
+        {
+
+                AntiPlacement(Color.magenta, false);
+
+        }
+    }
+
+
+    private void AntiPlacement(Color color, bool enter)
+    {
+        preventPlace = enter;
+
+        var lineRenderer = GetComponent<LineRenderer>();
+        lineRenderer.startColor = color;
+        lineRenderer.endColor = color;
+
+        DisplayCollider();
+
     }
 }

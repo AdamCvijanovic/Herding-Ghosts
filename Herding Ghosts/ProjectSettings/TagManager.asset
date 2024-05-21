@@ -6,6 +6,10 @@ TagManager:
   tags:
   - UsableItem
   - Enemy
+  - WoodFloor
+  - FurnitureManager
+  - PlaceableFurniture
+  - Crops
   layers:
   - Default
   - TransparentFX
@@ -45,4 +49,7 @@ TagManager:
     locked: 0
   - name: SortingLayer1
     uniqueID: 3856985445
+    locked: 0
+  - name: ColOutline
+    uniqueID: 3808358687
     locked: 0

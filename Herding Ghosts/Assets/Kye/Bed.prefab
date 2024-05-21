@@ -207,12 +207,62 @@ MonoBehaviour:
       m_Action: Remove
       m_Flags: 0
     m_Flags: 0
+  movement:
+    m_Name: Movement
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: b4a73b7a-594b-4900-b52f-550d841297e9
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 2D Vector
+      m_Id: d5162ed9-74fe-48c0-9a08-3e6efbd5ab62
+      m_Path: 2DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement
+      m_Flags: 4
+    - m_Name: up
+      m_Id: 1b5fe840-4ffe-43c4-ba5b-4e4d75f1aeb1
+      m_Path: <Keyboard>/#(W)
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement
+      m_Flags: 8
+    - m_Name: down
+      m_Id: e58f3801-ccb7-41c6-9c36-2d9b0fb5073d
+      m_Path: <Keyboard>/#(A)
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement
+      m_Flags: 8
+    - m_Name: left
+      m_Id: e9e9860d-e801-46f6-a6a0-6510e48b4fbe
+      m_Path: <Keyboard>/#(S)
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement
+      m_Flags: 8
+    - m_Name: right
+      m_Id: 75106c75-c193-42ce-8b03-01de01baf9db
+      m_Path: <Keyboard>/#(D)
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement
+      m_Flags: 8
+    m_Flags: 0
   selected: 0
   layer: 0
   tracker: 0
   rotationSprites: []
   rotationTracker: 0
   ghostUse: 1
+  inUse: 0
 --- !u!114 &-6819543091912114524
 MonoBehaviour:
   m_ObjectHideFlags: 0

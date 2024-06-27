@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2544
     height: 1341
   m_ShowMode: 4
-  m_Title: Console
+  m_Title: Project
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 1
-  controlID: 226
+  controlID: 220
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 227
+  controlID: 221
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -309,7 +309,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ConsoleWindow
+  m_Name: ProjectBrowser
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -318,16 +318,16 @@ MonoBehaviour:
     y: 0
     width: 1363
     height: 369
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 22}
+  m_MinSize: {x: 231, y: 271}
+  m_MaxSize: {x: 10001, y: 10021}
+  m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
   - {fileID: 21}
   - {fileID: 22}
   - {fileID: 23}
-  m_Selected: 2
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 2
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -511,24 +511,24 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 192}
-      m_SelectedIDs: 469f0000
-      m_LastClickedID: 40774
-      m_ExpandedIDs: 327af9ff567af9ff3eecfbff5aecfbff76ecfbff9aecfbffbeecfbff2870fcff7070fcff1af3feff22f3feff2ef3feff54f4feffe0eaffff08fbffff6e9c0000cc9d0000d49d00007e9e0000da9e0000149f00005a9f000012a00000
+      scrollPos: {x: 0, y: 416}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: e868fafff468faff2a69faff1a6afaff7aedfaffa0edfaffc6eefaffb237fbff5495fcff6095fcff8696fcffbe64fdffe465fdffc40dfeffd00dfefff60efeffa280feff36dcffffaae7ffff08fbffff70a20000aea20000cea3000054a40000f6a400005ca50000e6a5000054a60000e6a70000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Destroyer (2)
-        m_OriginalName: Destroyer (2)
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 40622
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 9}
       m_SearchString: 
@@ -1250,9 +1250,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0, y: 0, z: 0}
+    m_Target: {x: 1.5120656, y: -0.78195393, z: 0.020564094}
     speed: 2
-    m_Value: {x: 0, y: 0, z: 0}
+    m_Value: {x: 1.5120656, y: -0.78195393, z: 0.020564094}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1302,9 +1302,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 10
+    m_Target: 7.9435906
     speed: 2
-    m_Value: 10
+    m_Value: 7.9435906
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1370,22 +1370,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/DrinkMinigame
+    - Assets
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 74
   m_LastFolders:
-  - Assets/Scripts/DrinkMinigame
+  - Assets
   m_LastFoldersGridSize: 74
   m_LastProjectPath: M:\Herding Ghosts\Herding-Ghosts-Unity\Herding Ghosts
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 248}
-    m_SelectedIDs: 28f30000
-    m_LastClickedID: 62248
-    m_ExpandedIDs: 00000000889b00008a9b00008c9b00008e9b0000909b0000929b0000949b0000969b0000989b00009a9b00009c9b00009e9b0000a09b0000a29b0000a49b0000009c0000049c000000ca9a3b
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 569b0000
+    m_LastClickedID: 39766
+    m_ExpandedIDs: 00000000489b00004a9b00004c9b00004e9b0000509b0000529b0000549b0000569b0000589b00005a9b00005c9b00005e9b0000609b0000629b0000649b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1413,7 +1413,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000889b00008a9b00008c9b00008e9b0000909b0000929b0000949b0000969b0000989b00009a9b00009c9b00009e9b0000a09b0000a29b0000a49b0000
+    m_ExpandedIDs: 00000000489b00004a9b00004c9b00004e9b0000509b0000529b0000549b0000569b0000589b00005a9b00005c9b00005e9b0000609b0000629b0000649b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1438,8 +1438,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 8ca00000
-    m_LastClickedInstanceID: 41100
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000c4b10000deb700000000000000410000547e000002b300008e7f00003a3b000088e80000300b01006a62020098870000ae7d0000464b0100a86501006ef7000094d20000c0410000be410000d0410000c6410000963a0000cc410000ce410000ca410000c8410000c2410000643a0000de3a0000c2080200acb60000b0b60000beb6000078720000c65302005402000014080100
     m_RenameOverlay:
@@ -1564,7 +1564,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 40774
+  m_LastSelectedObjectID: 29884
 --- !u!114 &24
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1606,22 +1606,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/DrinkMinigame
+    - Assets/Art/Items/Materials
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scripts/DrinkMinigame
+  - Assets/Art/Items/Materials
   m_LastFoldersGridSize: -1
   m_LastProjectPath: M:\Herding Ghosts\Herding-Ghosts-Unity\Herding Ghosts
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 248}
-    m_SelectedIDs: 28f30000
-    m_LastClickedID: 62248
-    m_ExpandedIDs: 00000000889b00008a9b00008c9b00008e9b0000909b0000929b0000949b0000969b0000989b00009a9b00009c9b00009e9b0000a09b0000a29b0000a49b0000009c0000049c000000ca9a3b
+    m_SelectedIDs: ce9b0000
+    m_LastClickedID: 39886
+    m_ExpandedIDs: 00000000489b00004a9b00004c9b00004e9b0000509b0000529b0000549b0000569b0000589b00005a9b00005c9b00005e9b0000609b0000629b0000649b0000b09b0000d09b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1649,7 +1649,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000889b00008a9b00008c9b00008e9b0000909b0000929b0000949b0000969b0000989b00009a9b00009c9b00009e9b0000a09b0000a29b0000a49b0000
+    m_ExpandedIDs: 00000000489b00004a9b00004c9b00004e9b0000509b0000529b0000549b0000569b0000589b00005a9b00005c9b00005e9b0000609b0000629b0000649b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

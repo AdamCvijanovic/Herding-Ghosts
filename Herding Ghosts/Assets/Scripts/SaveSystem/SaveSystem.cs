@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using Newtonsoft.Json;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SaveSystem : MonoBehaviour
 {
 
     public static SaveSystem ManagerState;
-    public List<SaveItem> AllSaveItems;
+    public List<SaveHelper> finalSaveditems;
 
 
-    private int currentSaveSelection = 0;
+    public int currentSaveSelection = -1;
 
     private string m_saveLocation;
 
@@ -28,23 +28,23 @@ public class SaveSystem : MonoBehaviour
 
         ManagerState = this;
         DontDestroyOnLoad(gameObject);
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    private void Start()
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         m_saveLocation = Application.persistentDataPath + "/save" + currentSaveSelection + ".json";
         LoadItems();
     }
 
-
-    public void SaveItems()
+    public void SetSaveItems()
     {
         SaveItem[] savedItems = Resources.FindObjectsOfTypeAll<SaveItem>();
 
-        List<SaveHelper> finalSaveditems = new List<SaveHelper>();
+        finalSaveditems = new List<SaveHelper>();
 
-        
-        foreach(var item in savedItems)
+
+        foreach (var item in savedItems)
         {
             var helper = new SaveHelper();
 
@@ -54,27 +54,35 @@ public class SaveSystem : MonoBehaviour
 
             finalSaveditems.Add(helper);
         }
+    }
+
+
+    public void SaveItems()
+    {
 
         var jsonString = JsonConvert.SerializeObject(finalSaveditems, Formatting.Indented);
 
         File.WriteAllText(m_saveLocation, jsonString);
+
+        finalSaveditems.Clear();
+
     }
 
 
     public void LoadItems()
     {
-        if (File.Exists(m_saveLocation))
+        Debug.Log(currentSaveSelection);
+        if (File.Exists(m_saveLocation) && currentSaveSelection != -1)
         {
-            SaveItem[] savedItems = Resources.FindObjectsOfTypeAll<SaveItem>();
+            List<SaveItem> savedItems = new List<SaveItem>(Resources.FindObjectsOfTypeAll<SaveItem>());
 
             string jsonData = File.ReadAllText(m_saveLocation);
 
-            Debug.Log(savedItems[0].gameObjectName);
             var helperItems = JsonConvert.DeserializeObject<List<SaveHelper>>(jsonData);
-
+            
             foreach (var helperItem in helperItems)
             {
-                var sceneItem = savedItems.First(x => x.gameObjectName == helperItem.gameObjectName);
+                var sceneItem = savedItems.Find(x => x.gameObjectName == helperItem.gameObjectName);
                 sceneItem.gameObjectName = helperItem.gameObjectName;
                 sceneItem.numbersToSave = helperItem.numbersToSave;
                 sceneItem.stringsToSave = helperItem.stringsToSave;
@@ -87,5 +95,21 @@ public class SaveSystem : MonoBehaviour
     {
         currentSaveSelection = saveSlot;
         m_saveLocation = Application.persistentDataPath + "/save" + currentSaveSelection + ".json";
+    }
+
+    public bool CheckAvailable(int slot)
+    {
+        if(File.Exists(Application.persistentDataPath + "/save" + slot + ".json"))
+        {
+            return true;
+        }
+
+        else
+        {
+
+            return false;
+        }
+
+
     }
 }

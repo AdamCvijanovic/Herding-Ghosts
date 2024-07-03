@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class RollingPinUI : MonoBehaviour/*, IBeginDragHandler, IDragHandler, IEndDragHandler*/
 {
     public DoughUI doughObj;
+    public Scrollbar scrollbar;
 
     public Vector3 rollingPinPosition = new Vector3();
 
@@ -33,7 +34,7 @@ public class RollingPinUI : MonoBehaviour/*, IBeginDragHandler, IDragHandler, IE
     public void ResetRollingPin()
     {
         ResetColBools();
-        GetComponentInChildren<Scrollbar>().value = 0;
+        scrollbar.value = 0;
     }
 
     //public void OnBeginDrag(PointerEventData eventData)

@@ -16,14 +16,14 @@ public class PlayerInventoryUI : MonoBehaviour
     public Inventory playerInventory;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         if(playerInventory == null)
         {
             playerInventory = FindObjectOfType<Player>().gameObject.GetComponent<Inventory>();
         }
 
-        _playerInventoryPanel.SetActive(false);
+        //_playerInventoryPanel.SetActive(false);
         _gridLayoutGroup = _playerInventoryPanel.GetComponentInChildren<GridLayoutGroup>();
 
         _gridLayoutGroup.GetComponentsInChildren<InventorySlot>(true, _inventorySlotList);
@@ -58,8 +58,20 @@ public class PlayerInventoryUI : MonoBehaviour
         {
             _playerInventoryPanel.SetActive(false);
         }
+    }
+    public void ToggleMinigameInventory()
+    {
+        Debug.Log("Toggle activate");
 
-        
+        if (_playerInventoryPanel.activeInHierarchy == false)
+        {
+            _playerInventoryPanel.SetActive(true);
+            UpdateInventory();
+        }
+        else if (_playerInventoryPanel.activeInHierarchy == true)
+        {
+            _playerInventoryPanel.SetActive(false);
+        }
     }
 
     public void UpdatePlayerInventoryFromUI(int index, Item item)
@@ -74,9 +86,15 @@ public class PlayerInventoryUI : MonoBehaviour
 
         for (int i = 0; i < numSlots; i++)
         {
-            //Check if index is null 
-            if(playerInventory._items[i] != _inventorySlotList[i].currentItem)
+            if(playerInventory._items[i] == null)
             {
+                _inventorySlotList[i].RemoveItemFromSlot();
+                //Destroy(_inventorySlotList[i].currentItem.gameObject);
+            }
+            //Check if index item is the same as UI item 
+            else if(playerInventory._items[i] != _inventorySlotList[i].currentItem)
+            {
+                Debug.Log("PLAYER INVENTORY" + playerInventory._items[i].name);
                 // check if it's an ingredient item
                 if (playerInventory._items[i].GetComponent<IngredientItem>().ingScrptobj)
                 {
@@ -89,7 +107,7 @@ public class PlayerInventoryUI : MonoBehaviour
 
                         //spawn draggable item
                         GameObject newDraggable = Instantiate(draggableItemPrefab, this.gameObject.transform);
-                        newDraggable.transform.parent = _inventorySlotList[i].transform;
+                        newDraggable.transform.SetParent(_inventorySlotList[i].transform);
                         //assign Parent & Child
                         _inventorySlotList[i].currentItem = newDraggable.GetComponent<DraggableItem>();
                         newDraggable.GetComponent<DraggableItem>().currentParent = _inventorySlotList[i].transform;

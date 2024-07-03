@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d364293f4347cc4984627a0463a6615, type: 3}
+  m_Name: Pancakes
+  m_EditorClassIdentifier: 
+  itemPrefab: {fileID: 1429433798216921116, guid: b7083a5085717ff4a8c4b10e72dd77bb, type: 3}

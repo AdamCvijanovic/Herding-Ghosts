@@ -68,7 +68,7 @@ MonoBehaviour:
   endValue: 10
   valueToLerp: 0
   timeElapsed: 0
-  foodType: 12
+  ingredientType: 13
   ingScrptobj: {fileID: 11400000, guid: 0c75ca91472ec614998a61e6802bd41e, type: 2}
   IngrdntProperties: {fileID: 0}
 --- !u!114 &4417333570503285883

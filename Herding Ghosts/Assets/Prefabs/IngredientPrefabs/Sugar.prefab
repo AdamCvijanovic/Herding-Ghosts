@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9bc012b338ad724293fa60cd1884c1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemSprite: {fileID: 21300000, guid: a7864566b17b7f844a95bbbe70749b1c, type: 3}
+  itemSprite: {fileID: 1772968898, guid: 36a650d6ef988c847a034c7ec50944ad, type: 3}
   parentObj: {fileID: 0}
   subclass: {fileID: 0}
   itemBehaviour: {fileID: 0}
@@ -68,7 +68,7 @@ MonoBehaviour:
   endValue: 10
   valueToLerp: 0
   timeElapsed: 0
-  foodType: 5
+  ingredientType: 5
   ingScrptobj: {fileID: 11400000, guid: 5bcac97ac06d76043a11a7f3a413f711, type: 2}
   IngrdntProperties: {fileID: 0}
 --- !u!114 &3915563689754485662
@@ -226,7 +226,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 7
-  m_Sprite: {fileID: 21300000, guid: a7864566b17b7f844a95bbbe70749b1c, type: 3}
+  m_Sprite: {fileID: 1772968898, guid: 36a650d6ef988c847a034c7ec50944ad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

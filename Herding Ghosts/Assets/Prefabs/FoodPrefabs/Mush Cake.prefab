@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 0f59513043a69924289c663dad91f6e0, type: 3}
+  m_Sprite: {fileID: 174346374, guid: 36a650d6ef988c847a034c7ec50944ad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -187,9 +187,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a305a043561035a4a88150ef62e87505, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: 174346374, guid: 36a650d6ef988c847a034c7ec50944ad, type: 3}
   parentObj: {fileID: 0}
   subclass: {fileID: 0}
+  itemBehaviour: {fileID: 0}
   _isHeld: 0
   helpText: {fileID: 0}
   _inInventory: 0
@@ -199,6 +200,12 @@ MonoBehaviour:
   highlightMaterial: {fileID: 2100000, guid: ffac07a7dd4560e4692a12b1ab790c40, type: 2}
   pickupString: MushCake
   useString: 
+  lerpSpeed: 3
+  lerpDuration: 0.5
+  startPosition: {x: 0, y: 0, z: 0}
+  endValue: 10
+  valueToLerp: 0
+  timeElapsed: 0
   foodType: 5
   foodSprite: {fileID: 21300000, guid: 0f59513043a69924289c663dad91f6e0, type: 3}
   recipeObj: {fileID: 11400000, guid: 0366effd457b71447ad9d4c2529cce1e, type: 2}

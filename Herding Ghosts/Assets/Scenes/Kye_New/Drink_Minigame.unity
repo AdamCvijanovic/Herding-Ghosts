@@ -5587,6 +5587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a6b6e9dd20115643af2b5d30b7273cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  drinkType: 0
   bottleMovement: {fileID: 1029107118}
 --- !u!114 &47866316
 MonoBehaviour:
@@ -17891,7 +17892,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d83e042cdb50cc4b88eae44a8a8d724, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  start: {fileID: 0}
   m_minigameCanvas: {fileID: 1254731634}
+  ui: {fileID: 0}
 --- !u!1 &576276641
 GameObject:
   m_ObjectHideFlags: 0
@@ -24448,15 +24451,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tipAmount: 120
+  currentTip: 0
   liquid: {fileID: 47866310}
   manager: {fileID: 1254731639}
   bobaDrink: {fileID: 1304633394}
   sugarDrink: {fileID: 314823437}
   juiceDrink: {fileID: 258270915}
+  finalDrink: {fileID: 0}
   drinkLayer: 2
   camera: {fileID: 1079876744}
   percentageComplete: 0
   percentagePerParticle: 50
+  completeSound: {fileID: 0}
 --- !u!114 &1029107119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25437,15 +25443,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tipAmount: 120
+  currentTip: 0
   liquid: {fileID: 1201208855}
   manager: {fileID: 1254731639}
   bobaDrink: {fileID: 1304633394}
   sugarDrink: {fileID: 314823437}
   juiceDrink: {fileID: 258270915}
+  finalDrink: {fileID: 0}
   drinkLayer: 1
   camera: {fileID: 1079876744}
   percentageComplete: 0
   percentagePerParticle: 500
+  completeSound: {fileID: 0}
 --- !u!114 &1150175578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32398,6 +32407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a6b6e9dd20115643af2b5d30b7273cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  drinkType: 0
   bottleMovement: {fileID: 1150175577}
 --- !u!114 &1201208861
 MonoBehaviour:
@@ -32669,6 +32679,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76550418492787248923ac237107d7fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  melt: {fileID: 0}
 --- !u!1001 &1259322101
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33693,6 +33704,10 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 230992896284827771, guid: b17c9110fe88d0549aed7b2feeee159f, type: 3}
+      propertyPath: ingredientType
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 758716846819303254, guid: b17c9110fe88d0549aed7b2feeee159f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 6
@@ -33744,6 +33759,10 @@ PrefabInstance:
     - target: {fileID: 1060905599461331805, guid: b17c9110fe88d0549aed7b2feeee159f, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1221450451780858327, guid: b17c9110fe88d0549aed7b2feeee159f, type: 3}
+      propertyPath: ingredientType
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1445118734320452447, guid: b17c9110fe88d0549aed7b2feeee159f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -34007,6 +34026,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2358205824518737573, guid: b17c9110fe88d0549aed7b2feeee159f, type: 3}
+      propertyPath: ingredientType
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 2376358707171016466, guid: b17c9110fe88d0549aed7b2feeee159f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -34171,6 +34194,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2765331421031867823, guid: b17c9110fe88d0549aed7b2feeee159f, type: 3}
+      propertyPath: ingredientType
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 2777049658115606641, guid: b17c9110fe88d0549aed7b2feeee159f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -34206,6 +34233,14 @@ PrefabInstance:
     - target: {fileID: 2985789328380573047, guid: b17c9110fe88d0549aed7b2feeee159f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3021817221734118785, guid: b17c9110fe88d0549aed7b2feeee159f, type: 3}
+      propertyPath: ingredientType
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3420288217603690375, guid: b17c9110fe88d0549aed7b2feeee159f, type: 3}
+      propertyPath: ingredientType
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3457548227790827588, guid: b17c9110fe88d0549aed7b2feeee159f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
@@ -34251,6 +34286,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 3962429598270285075, guid: b17c9110fe88d0549aed7b2feeee159f, type: 3}
+      propertyPath: ingredientType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4066106484630763908, guid: b17c9110fe88d0549aed7b2feeee159f, type: 3}
+      propertyPath: ingredientType
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202432065120799972, guid: b17c9110fe88d0549aed7b2feeee159f, type: 3}
+      propertyPath: ingredientType
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 4394969035601393047, guid: b17c9110fe88d0549aed7b2feeee159f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -34334,6 +34381,14 @@ PrefabInstance:
     - target: {fileID: 5538146390728344083, guid: b17c9110fe88d0549aed7b2feeee159f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6164959786665970303, guid: b17c9110fe88d0549aed7b2feeee159f, type: 3}
+      propertyPath: ingredientType
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 6465133914587672895, guid: b17c9110fe88d0549aed7b2feeee159f, type: 3}
+      propertyPath: ingredientType
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6544090748486202626, guid: b17c9110fe88d0549aed7b2feeee159f, type: 3}
       propertyPath: m_Pivot.x
@@ -34686,6 +34741,10 @@ PrefabInstance:
     - target: {fileID: 8342252732860370113, guid: b17c9110fe88d0549aed7b2feeee159f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8381629604895318528, guid: b17c9110fe88d0549aed7b2feeee159f, type: 3}
+      propertyPath: ingredientType
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8403234331212153368, guid: b17c9110fe88d0549aed7b2feeee159f, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -35907,15 +35966,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tipAmount: 120
+  currentTip: 0
   liquid: {fileID: 2065943593}
   manager: {fileID: 1254731639}
   bobaDrink: {fileID: 1304633394}
   sugarDrink: {fileID: 314823437}
   juiceDrink: {fileID: 258270915}
+  finalDrink: {fileID: 0}
   drinkLayer: 0
   camera: {fileID: 1079876744}
   percentageComplete: 0
   percentagePerParticle: 50
+  completeSound: {fileID: 0}
 --- !u!114 &1541293002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49676,6 +49738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a6b6e9dd20115643af2b5d30b7273cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  drinkType: 0
   bottleMovement: {fileID: 1541293001}
 --- !u!114 &2065943598
 MonoBehaviour:

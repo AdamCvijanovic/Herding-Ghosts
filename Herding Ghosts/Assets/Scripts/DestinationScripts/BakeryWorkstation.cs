@@ -53,6 +53,7 @@ public class BakeryWorkstation : MonoBehaviour
     {
         Debug.Log("Using Workbench");
         _bakeryWorkbenchUI.ActivatePanel();
+        LinkInventoryToPlayer();
 
         WorkstationInventory wkstnInventory = GetComponent<WorkstationInventory>();
 
@@ -69,6 +70,7 @@ public class BakeryWorkstation : MonoBehaviour
 
     public void UpdateCurrentItem(Item item)
     {
+        //**acvija: what are we doing here again?
         currentItem = item;
         _bakeryWorkbenchUI.UpdateDragItem(item);
     }
@@ -76,6 +78,11 @@ public class BakeryWorkstation : MonoBehaviour
     public List<Item> GetInventoryItems()
     {
         return _inventory._items;
+    }
+
+    public void LinkInventoryToPlayer()
+    {
+        _inventory._items = FindObjectOfType<PlayerInventoryUI>().playerInventory._items;
     }
 
     public void InventoryCheck(Item item)
@@ -91,17 +98,23 @@ public class BakeryWorkstation : MonoBehaviour
 
     public void ProcessFood(GameObject baseIngdntPrefab)
     {
-        if(currentItem != null)
-        {
-            currentItem.sprRndr.sprite = tempCookedIngSprite;
-            if (currentItem.GetComponent<IngredientProperties>() != null)
-            {
-                currentItem.GetComponent<IngredientProperties>().AddProperty(IngredientProperties.IngredientGroup.Chopped);
-            }
-        }
+        //if(currentItem != null)
+        //{
+        //    currentItem.sprRndr.sprite = tempCookedIngSprite;
+        //    if (currentItem.GetComponent<IngredientProperties>() != null)
+        //    {
+        //        currentItem.GetComponent<IngredientProperties>().AddProperty(IngredientProperties.IngredientGroup.Chopped);
+        //    }
+        //}
+
+        //Consume Item
 
         Debug.Log("Create Cooked Item");
-        Instantiate(baseIngdntPrefab, itemSpawnPosition);
+        GameObject newFood = Instantiate(baseIngdntPrefab, itemSpawnPosition);
+
+        _bakeryWorkbenchUI.DeActivatePanel();
+        FindObjectOfType<PlayerPickup>().Pickup(newFood.GetComponent<FoodItem>());
+        _bakeryWorkbenchUI.ResetMinigameUI();
 
     }
 }

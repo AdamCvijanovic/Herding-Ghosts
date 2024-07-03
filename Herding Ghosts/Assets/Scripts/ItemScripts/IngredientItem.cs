@@ -6,7 +6,7 @@ public class IngredientItem : Item
 {
     public enum IngredientType {None, Flour, CupCake, Carrot, Wheat, Sugar, Apple, Milk, Pumpkin, Mushroom, TeaLeaves, Strawberry, Honey, Ectoplasm, Boba, CarrotSeed,};
     [SerializeField]
-    private IngredientType foodType;
+    private IngredientType ingredientType;
 
     public IngredientScriptableObject ingScrptobj;
     public IngredientProperties IngrdntProperties;
@@ -43,13 +43,13 @@ public class IngredientItem : Item
 
     public override IngredientType GetIngredientType()
     {
-        return foodType;
+        return ingredientType;
     }
 
     public override void Activate()
     {
 
-        Debug.Log(foodType.ToString() + " IS THE FOOD TYPE");
+        Debug.Log(ingredientType.ToString() + " IS THE FOOD TYPE");
     }
 
 

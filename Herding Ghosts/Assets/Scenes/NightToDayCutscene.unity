@@ -979,6 +979,7 @@ GameObject:
   - component: {fileID: 427470933}
   - component: {fileID: 427470932}
   - component: {fileID: 427470931}
+  - component: {fileID: 427470935}
   m_Layer: 5
   m_Name: Save Slot 4
   m_TagString: Untagged
@@ -1080,38 +1081,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1018554123}
-        m_TargetAssemblyTypeName: SaveSystem, Assembly-CSharp
-        m_MethodName: SetSaveSlot
+      - m_Target: {fileID: 427470935}
+        m_TargetAssemblyTypeName: EndDay, Assembly-CSharp
+        m_MethodName: EndDaySaved
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 3
-          m_FloatArgument: 0
-          m_StringArgument: PlayGame
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1018554123}
-        m_TargetAssemblyTypeName: SaveSystem, Assembly-CSharp
-        m_MethodName: SaveItems
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1126560646}
-        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: RepeatDay
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1154,6 +1131,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 427470929}
   m_CullTransparentMesh: 1
+--- !u!114 &427470935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427470929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 439d271742fd9404e9f9393acedc3426, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelManager: {fileID: 1126560646}
 --- !u!1 &473524021
 GameObject:
   m_ObjectHideFlags: 0
@@ -1719,6 +1709,7 @@ GameObject:
   - component: {fileID: 761890414}
   - component: {fileID: 761890413}
   - component: {fileID: 761890412}
+  - component: {fileID: 761890416}
   m_Layer: 5
   m_Name: Save Slot 1
   m_TagString: Untagged
@@ -1820,34 +1811,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1018554123}
-        m_TargetAssemblyTypeName: SaveSystem, Assembly-CSharp
-        m_MethodName: SetSaveSlot
+      - m_Target: {fileID: 427470935}
+        m_TargetAssemblyTypeName: EndDay, Assembly-CSharp
+        m_MethodName: EndDaySaved
         m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: PlayGame
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1018554123}
-        m_TargetAssemblyTypeName: SaveSystem, Assembly-CSharp
-        m_MethodName: SaveItems
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1126560646}
-        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: RepeatDay
-        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1894,6 +1861,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 761890410}
   m_CullTransparentMesh: 1
+--- !u!114 &761890416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761890410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 439d271742fd9404e9f9393acedc3426, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelManager: {fileID: 1126560646}
 --- !u!1 &1018554122
 GameObject:
   m_ObjectHideFlags: 0
@@ -3459,6 +3439,7 @@ GameObject:
   - component: {fileID: 1903817765}
   - component: {fileID: 1903817764}
   - component: {fileID: 1903817763}
+  - component: {fileID: 1903817767}
   m_Layer: 5
   m_Name: Save Slot 2
   m_TagString: Untagged
@@ -3560,38 +3541,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1018554123}
-        m_TargetAssemblyTypeName: SaveSystem, Assembly-CSharp
-        m_MethodName: SetSaveSlot
+      - m_Target: {fileID: 427470935}
+        m_TargetAssemblyTypeName: EndDay, Assembly-CSharp
+        m_MethodName: EndDaySaved
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: PlayGame
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1018554123}
-        m_TargetAssemblyTypeName: SaveSystem, Assembly-CSharp
-        m_MethodName: SaveItems
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1126560646}
-        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: RepeatDay
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3634,6 +3591,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1903817761}
   m_CullTransparentMesh: 1
+--- !u!114 &1903817767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903817761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 439d271742fd9404e9f9393acedc3426, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelManager: {fileID: 1126560646}
 --- !u!1 &2028441906
 GameObject:
   m_ObjectHideFlags: 0
@@ -3782,6 +3752,7 @@ GameObject:
   - component: {fileID: 2036810738}
   - component: {fileID: 2036810737}
   - component: {fileID: 2036810736}
+  - component: {fileID: 2036810740}
   m_Layer: 5
   m_Name: Save Slot 3
   m_TagString: Untagged
@@ -3883,38 +3854,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1018554123}
-        m_TargetAssemblyTypeName: SaveSystem, Assembly-CSharp
-        m_MethodName: SetSaveSlot
+      - m_Target: {fileID: 427470935}
+        m_TargetAssemblyTypeName: EndDay, Assembly-CSharp
+        m_MethodName: EndDaySaved
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: PlayGame
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1018554123}
-        m_TargetAssemblyTypeName: SaveSystem, Assembly-CSharp
-        m_MethodName: SaveItems
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1126560646}
-        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: RepeatDay
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3957,6 +3904,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2036810734}
   m_CullTransparentMesh: 1
+--- !u!114 &2036810740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036810734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 439d271742fd9404e9f9393acedc3426, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelManager: {fileID: 1126560646}
 --- !u!1 &2037344909
 GameObject:
   m_ObjectHideFlags: 0

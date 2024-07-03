@@ -43830,6 +43830,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3706833703406369958, guid: bf2c92603bee4f64c999e604b326cb3b, type: 3}
+      propertyPath: bedActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3706833703406369958, guid: bf2c92603bee4f64c999e604b326cb3b, type: 3}
+      propertyPath: sleepActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3706833703406369958, guid: bf2c92603bee4f64c999e604b326cb3b, type: 3}
       propertyPath: interactable
       value: 
       objectReference: {fileID: 238168369}
@@ -46262,7 +46270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6d130254e5497b4f8d702e9d53495aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AllSaveItems: []
+  currentSaveSelection: -1
 --- !u!1001 &1969334847
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52473,7 +52481,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2091968452
 RectTransform:
   m_ObjectHideFlags: 0

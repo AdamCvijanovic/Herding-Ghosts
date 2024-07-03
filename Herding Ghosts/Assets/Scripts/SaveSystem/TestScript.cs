@@ -29,7 +29,7 @@ public class TestScript : MonoBehaviour
 
                 SaveSystem.ManagerState.SaveItems();
 
-                gameObject.SetActive(false);
+                start = false;
             }
 
             else

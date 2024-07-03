@@ -29,6 +29,7 @@ public class SaveSystem : MonoBehaviour
         ManagerState = this;
         DontDestroyOnLoad(gameObject);
         SceneManager.sceneLoaded += OnSceneLoaded;
+
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -36,6 +37,7 @@ public class SaveSystem : MonoBehaviour
         m_saveLocation = Application.persistentDataPath + "/save" + currentSaveSelection + ".json";
         LoadItems();
     }
+
 
     public void SetSaveItems()
     {
@@ -54,12 +56,14 @@ public class SaveSystem : MonoBehaviour
 
             finalSaveditems.Add(helper);
         }
+
+        Debug.Log(finalSaveditems.Count + "save items");
     }
 
 
     public void SaveItems()
     {
-
+        
         var jsonString = JsonConvert.SerializeObject(finalSaveditems, Formatting.Indented);
 
         File.WriteAllText(m_saveLocation, jsonString);
@@ -71,8 +75,7 @@ public class SaveSystem : MonoBehaviour
 
     public void LoadItems()
     {
-        Debug.Log(currentSaveSelection);
-        if (File.Exists(m_saveLocation) && currentSaveSelection != -1)
+        if (File.Exists(m_saveLocation) && currentSaveSelection != -1 && SceneManager.GetActiveScene().name != "NightToDayCutscene")
         {
             List<SaveItem> savedItems = new List<SaveItem>(Resources.FindObjectsOfTypeAll<SaveItem>());
 

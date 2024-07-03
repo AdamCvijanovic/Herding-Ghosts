@@ -23,12 +23,6 @@ public class TestScript : MonoBehaviour
             {
                 GetComponent<SaveItem>().numbersToSave.Add("testnumber", 2);
 
-                SaveSystem.ManagerState.SetSaveSlot(0);
-
-                SaveSystem.ManagerState.SetSaveItems();
-
-                SaveSystem.ManagerState.SaveItems();
-
                 start = false;
             }
 

@@ -1144,6 +1144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelManager: {fileID: 1126560646}
+  slot: 3
 --- !u!1 &473524021
 GameObject:
   m_ObjectHideFlags: 0
@@ -1874,6 +1875,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelManager: {fileID: 1126560646}
+  slot: 0
 --- !u!1 &1018554122
 GameObject:
   m_ObjectHideFlags: 0
@@ -3604,6 +3606,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelManager: {fileID: 1126560646}
+  slot: 1
 --- !u!1 &2028441906
 GameObject:
   m_ObjectHideFlags: 0
@@ -3917,6 +3920,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelManager: {fileID: 1126560646}
+  slot: 2
 --- !u!1 &2037344909
 GameObject:
   m_ObjectHideFlags: 0

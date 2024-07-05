@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -5,17 +6,25 @@ using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
+public class FinalSave
+{
+
+    public string timeSaved = "No Time";
+    public List<SaveHelper> finalSaveditems;
+}
+
 public class SaveSystem : MonoBehaviour
 {
 
     public static SaveSystem ManagerState;
-    public List<SaveHelper> finalSaveditems;
+
+    public FinalSave finalSave = new FinalSave();
 
 
     public int currentSaveSelection = -1;
 
     private string m_saveLocation;
-
 
 
     private void Awake()
@@ -43,7 +52,7 @@ public class SaveSystem : MonoBehaviour
     {
         SaveItem[] savedItems = Resources.FindObjectsOfTypeAll<SaveItem>();
 
-        finalSaveditems = new List<SaveHelper>();
+        finalSave.finalSaveditems = new List<SaveHelper>();
 
 
         foreach (var item in savedItems)
@@ -54,21 +63,22 @@ public class SaveSystem : MonoBehaviour
             helper.numbersToSave = item.numbersToSave;
             helper.stringsToSave = item.stringsToSave;
 
-            finalSaveditems.Add(helper);
+            finalSave.finalSaveditems.Add(helper);
         }
 
-        Debug.Log(finalSaveditems.Count + "save items");
+        Debug.Log(finalSave.finalSaveditems.Count + "save items");
     }
 
 
     public void SaveItems()
     {
-        
-        var jsonString = JsonConvert.SerializeObject(finalSaveditems, Formatting.Indented);
+        finalSave.timeSaved = DateTime.Now.ToString("MMM dd yyyy hh:mm");
+
+        var jsonString = JsonConvert.SerializeObject(finalSave, Formatting.Indented);
 
         File.WriteAllText(m_saveLocation, jsonString);
 
-        finalSaveditems.Clear();
+        finalSave.finalSaveditems.Clear();
 
     }
 
@@ -81,9 +91,9 @@ public class SaveSystem : MonoBehaviour
 
             string jsonData = File.ReadAllText(m_saveLocation);
 
-            var helperItems = JsonConvert.DeserializeObject<List<SaveHelper>>(jsonData);
-            
-            foreach (var helperItem in helperItems)
+            var helperItems = JsonConvert.DeserializeObject<FinalSave>(jsonData);
+
+            foreach (var helperItem in helperItems.finalSaveditems)
             {
                 var sceneItem = savedItems.Find(x => x.gameObjectName == helperItem.gameObjectName);
                 sceneItem.gameObjectName = helperItem.gameObjectName;
@@ -102,7 +112,7 @@ public class SaveSystem : MonoBehaviour
 
     public bool CheckAvailable(int slot)
     {
-        if(File.Exists(Application.persistentDataPath + "/save" + slot + ".json"))
+        if (File.Exists(Application.persistentDataPath + "/save" + slot + ".json"))
         {
             return true;
         }
@@ -113,6 +123,21 @@ public class SaveSystem : MonoBehaviour
             return false;
         }
 
+
+    }
+
+    public string GetSaveTime(int slot)
+    {
+        var saveLocation = Application.persistentDataPath + "/save" + slot + ".json";
+        if (File.Exists(saveLocation))
+        {
+            var jsonData = File.ReadAllText(saveLocation);
+            var helperItems = JsonConvert.DeserializeObject<FinalSave>(jsonData);
+            return helperItems.timeSaved;
+        }
+
+        else
+            return "SAVE NAME NOT AVAILABLE";
 
     }
 }

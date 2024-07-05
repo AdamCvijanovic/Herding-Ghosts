@@ -1077,7 +1077,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 427470933}
+  m_TargetGraphic: {fileID: 2028441908}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -1143,6 +1143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 439d271742fd9404e9f9393acedc3426, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parent: {fileID: 1545734493}
   levelManager: {fileID: 1126560646}
   slot: 3
 --- !u!1 &473524021
@@ -1808,7 +1809,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 761890414}
+  m_TargetGraphic: {fileID: 1859309679}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -1874,6 +1875,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 439d271742fd9404e9f9393acedc3426, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parent: {fileID: 1545734493}
   levelManager: {fileID: 1126560646}
   slot: 0
 --- !u!1 &1018554122
@@ -3539,7 +3541,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 1903817765}
+  m_TargetGraphic: {fileID: 1036858355}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -3605,6 +3607,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 439d271742fd9404e9f9393acedc3426, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parent: {fileID: 1545734493}
   levelManager: {fileID: 1126560646}
   slot: 1
 --- !u!1 &2028441906
@@ -3853,7 +3856,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 2036810738}
+  m_TargetGraphic: {fileID: 545781375}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -3919,6 +3922,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 439d271742fd9404e9f9393acedc3426, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parent: {fileID: 1545734493}
   levelManager: {fileID: 1126560646}
   slot: 2
 --- !u!1 &2037344909

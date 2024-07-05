@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class EndDay : MonoBehaviour
 {
+    public GameObject parent;
     public LevelManager levelManager;
     public int slot;
 
@@ -29,7 +30,7 @@ public class EndDay : MonoBehaviour
     {
         SaveSystem.ManagerState.SetSaveSlot(slot);
         SaveSystem.ManagerState.SaveItems();
-
+        parent.SetActive(false);
         levelManager.RepeatDay();
     }
 }

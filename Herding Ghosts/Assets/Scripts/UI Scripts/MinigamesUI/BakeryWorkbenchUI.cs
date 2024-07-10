@@ -79,6 +79,7 @@ public class BakeryWorkbenchUI : MonoBehaviour
 
     public void DeActivatePanel()
     {
+        IngInventoryPanel.GetComponent<PlayerInventoryUI>().UpdateInventory();
         workbenchPanel.SetActive(false);
     }
 

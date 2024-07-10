@@ -44,6 +44,11 @@ public class PlayerInventoryUI : MonoBehaviour
     }
 
 
+    public void RemoveAt(int index)
+    {
+        InventorySlot curInvSlot = _inventorySlotList[index];
+        curInvSlot.RemoveItemFromSlot();
+    }
 
     public void ToggleInventory()
     {
@@ -88,7 +93,8 @@ public class PlayerInventoryUI : MonoBehaviour
         {
             if(playerInventory._items[i] == null)
             {
-                _inventorySlotList[i].RemoveItemFromSlot();
+                //_inventorySlotList[i].RemoveItemFromSlot();
+                _inventorySlotList[i].ConsumeItem();
                 //Destroy(_inventorySlotList[i].currentItem.gameObject);
             }
             //Check if index item is the same as UI item 

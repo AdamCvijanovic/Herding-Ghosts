@@ -115,12 +115,15 @@ public class FurnitureController : MonoBehaviour
             transform.position = new Vector3(player.GetChild(0).transform.position.x - GetComponent<SpriteRenderer>().bounds.size.x, player.GetChild(0).transform.position.y, player.GetChild(0).transform.position.z);
             transform.parent = null;
 
-            player.GetChild(0).gameObject.GetComponent<PlayerMove>().enabled = false;
+
             player.GetChild(0).gameObject.GetComponent<PlayerInput>().enabled = false;
             player.GetChild(1).GetComponent<CinemachineVirtualCamera>().Follow = transform;
+
             movement.Enable();
             movement.performed += MovedObject;
             SetupLineRenderer();
+
+            GetComponent<Interactable>().UnHighlight();
             GetComponent<Interactable>().enabled = false;
 
 
@@ -139,17 +142,17 @@ public class FurnitureController : MonoBehaviour
         switch (combo)
         {
             case Vector2 when combo.Equals(Vector2.up):
-                transform.position += Vector3.up / 2;
+                transform.position += Vector3.up / 4;
                 break;
             case Vector2 when combo.Equals(Vector2.down):
-                transform.position += Vector3.down / 2;
+                transform.position += Vector3.down / 4;
                 break;
             case Vector2 when combo.Equals(Vector2.left):
-                transform.position += Vector3.left / 2;
+                transform.position += Vector3.left / 4;
                 break;
 
             case Vector2 when combo.Equals(Vector2.right):
-                transform.position += Vector3.right / 2;
+                transform.position += Vector3.right / 4;
                 break;
 
 
@@ -238,7 +241,6 @@ public class FurnitureController : MonoBehaviour
             if (startLineRenderer)
             {
                 var player = GameObject.FindGameObjectWithTag("Player").transform;
-                player.GetChild(0).gameObject.GetComponent<PlayerMove>().enabled = true;
                 player.GetChild(0).gameObject.GetComponent<PlayerInput>().enabled = true;
                 player.GetChild(1).GetComponent<CinemachineVirtualCamera>().Follow = player.GetChild(0);
                 movement.Disable();

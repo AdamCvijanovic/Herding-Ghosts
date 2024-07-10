@@ -121,7 +121,7 @@ public class FurnitureController : MonoBehaviour
             movement.Enable();
             movement.performed += MovedObject;
             SetupLineRenderer();
-
+            GetComponent<Interactable>().enabled = false;
 
 
             furnitureManager.ClearFurniture();
@@ -233,7 +233,7 @@ public class FurnitureController : MonoBehaviour
 
             GetComponent<BoxCollider2D>().isTrigger = false;
 
-
+            GetComponent<Interactable>().enabled = true;
 
             if (startLineRenderer)
             {

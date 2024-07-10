@@ -32672,20 +32672,20 @@ PrefabInstance:
       objectReference: {fileID: 1162681808}
     - target: {fileID: 3684251200314217398, guid: d94e3d6a10faae74980c9c518714212f, type: 3}
       propertyPath: m_furnitureSelector.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3684251200314217398, guid: d94e3d6a10faae74980c9c518714212f, type: 3}
       propertyPath: m_furnitureSelector.Array.data[0]
       value: 
-      objectReference: {fileID: 3381300807457949051, guid: e4d5d965a0083a043a253175099951db, type: 3}
+      objectReference: {fileID: 3381300807457949051, guid: f23b5d59af8428f4e85152cd2bea3e89, type: 3}
     - target: {fileID: 3684251200314217398, guid: d94e3d6a10faae74980c9c518714212f, type: 3}
       propertyPath: m_furnitureSelector.Array.data[1]
       value: 
-      objectReference: {fileID: 3381300807457949051, guid: f23b5d59af8428f4e85152cd2bea3e89, type: 3}
+      objectReference: {fileID: 3381300807457949051, guid: fb9fa70fdc1ee24478eeefeb217f4969, type: 3}
     - target: {fileID: 3684251200314217398, guid: d94e3d6a10faae74980c9c518714212f, type: 3}
       propertyPath: m_furnitureSelector.Array.data[2]
       value: 
-      objectReference: {fileID: 3381300807457949051, guid: fb9fa70fdc1ee24478eeefeb217f4969, type: 3}
+      objectReference: {fileID: 3381300807457949051, guid: dbf08502fcf726d4cbd5ba3bdc9b9df2, type: 3}
     - target: {fileID: 3684251200314217398, guid: d94e3d6a10faae74980c9c518714212f, type: 3}
       propertyPath: m_furnitureSelector.Array.data[3]
       value: 
@@ -37053,10 +37053,6 @@ PrefabInstance:
     - target: {fileID: 4795017059898380634, guid: 8ad2213fccc24dc48815b0fe11deb936, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9148970745454560878, guid: 8ad2213fccc24dc48815b0fe11deb936, type: 3}
       propertyPath: m_Size.x

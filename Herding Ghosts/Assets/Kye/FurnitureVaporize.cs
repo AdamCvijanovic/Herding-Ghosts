@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FurnitureVaporize : MonoBehaviour
 {
+    public MusicShuffler shuffler;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -18,9 +20,15 @@ public class FurnitureVaporize : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        
         if (collision.CompareTag("PlaceableFurniture"))
         {
             collision.GetComponent<FurnitureController>().RemoveFurniture(new UnityEngine.InputSystem.InputAction.CallbackContext());
+        }
+
+        if (collision.CompareTag("Player"))
+        {
+            shuffler.StopCustomSong();
         }
     }
 

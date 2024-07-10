@@ -336,17 +336,29 @@ public class FurnitureController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        
+        if (furnitureManager.holdingObject && isBeingHeld)
+        {
+            if(collision.gameObject.CompareTag("Perimeter"))
+            {
+                transform.position += new Vector3 (currentDirection.x, currentDirection.y, 0) / 2;
+
+            }
+
+            if (collision.gameObject.CompareTag("PlaceableFurniture") || collision.gameObject.CompareTag("Player"))
+            {
+                AntiPlacement(Color.red, true);
+            }
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
         if (furnitureManager.holdingObject && isBeingHeld)
         {
             if (collision.gameObject.CompareTag("PlaceableFurniture") || collision.gameObject.CompareTag("Player"))
             {
                 AntiPlacement(Color.red, true);
-            }
-
-            if(collision.gameObject.CompareTag("Perimeter"))
-            {
-                transform.position += new Vector3 (currentDirection.x, currentDirection.y, 0) / 2;
-
             }
         }
     }

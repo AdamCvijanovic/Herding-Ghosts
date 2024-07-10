@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4795017059898380634}
   - component: {fileID: 9148970745454560878}
-  - component: {fileID: 5494907424769022627}
   m_Layer: 0
   m_Name: FurnitureVaporizer
   m_TagString: Untagged
@@ -59,15 +58,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 2.3}
   m_EdgeRadius: 0
---- !u!114 &5494907424769022627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3381300807457949051}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 386a55f6a2b2d144fb6b07c98469f20f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

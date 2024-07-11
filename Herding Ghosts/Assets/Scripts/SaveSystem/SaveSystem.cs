@@ -72,6 +72,11 @@ public class SaveSystem : MonoBehaviour
 
     public void SaveItems()
     {
+        if (File.Exists(m_saveLocation))
+        {
+            File.Copy(m_saveLocation, Application.persistentDataPath + "/backup.json", true);
+        }
+
         finalSave.timeSaved = DateTime.Now.ToString("MMM dd yyyy hh:mm");
 
         var jsonString = JsonConvert.SerializeObject(finalSave, Formatting.Indented);
@@ -139,5 +144,17 @@ public class SaveSystem : MonoBehaviour
         else
             return "SAVE NAME NOT AVAILABLE";
 
+    }
+
+    public void DeleteSave(int slot)
+    {
+        var saveLocation = Application.persistentDataPath + "/save" + slot + ".json";
+
+        if (File.Exists(saveLocation))
+        {
+            File.Copy(saveLocation, Application.persistentDataPath + "/backup.json", true);
+
+            File.Delete(saveLocation);
+        }
     }
 }

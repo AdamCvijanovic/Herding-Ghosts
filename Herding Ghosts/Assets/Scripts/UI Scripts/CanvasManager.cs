@@ -12,11 +12,19 @@ public class CanvasManager : MonoBehaviour
     public GameObject winMenu;
     //public GameObject loseMenu;
     //public GameObject controlsMenu;
+    
     public GameObject pantryUI;
     public GameObject seedBarrelUI;
     public GameObject timerUI;
 
+    [Header("Minigame UI Panels")]
+
+    public GameObject bakingMinigameUI;
+    public GameObject grindStoneMinigameUI;
+
+    [Header("Grimoire and Inventory Screens")]
     public GrimoireUI grimoireUI;
+    public GameObject playerInventoryUI;
 
     public UIFadeInOut levelChanger;
     
@@ -156,6 +164,35 @@ public class CanvasManager : MonoBehaviour
         seedBarrelUI.SetActive(false);
     }
 
+    public void ToggleInventory()
+    {
+        Debug.Log("Toggle activate");
+
+        if (playerInventoryUI.activeInHierarchy == false)
+        {
+            playerInventoryUI.SetActive(true);
+            //Should have an activate function in the class itself instead of this search and call here
+            playerInventoryUI.GetComponent<PlayerInventoryUI>().UpdateInventory();
+        }
+        else if (playerInventoryUI.activeInHierarchy == true)
+        {
+            playerInventoryUI.SetActive(false);
+        }
+    }
+    public void ToggleMinigameInventory()
+    {
+        Debug.Log("Toggle activate");
+
+        if (playerInventoryUI.activeInHierarchy == false)
+        {
+            playerInventoryUI.SetActive(true);
+            playerInventoryUI.GetComponent<PlayerInventoryUI>().UpdateInventory();
+        }
+        else if (playerInventoryUI.activeInHierarchy == true)
+        {
+            playerInventoryUI.SetActive(false);
+        }
+    }
     public void ActivateTimer()
     {
         timerUI.GetComponent<UITImerClock>().ResetClock();

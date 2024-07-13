@@ -25,8 +25,6 @@ public class GrindstoneWorkbenchUI : MonoBehaviour
     public InventorySlot wheatInventorySlot;
     public DraggableItem dragItem;
 
-    public Sprite cookedIngredientSprite;
-
     public GameObject wheatPrefab;
     public GameObject flourPrefab;
 

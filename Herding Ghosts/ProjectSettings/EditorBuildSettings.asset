@@ -29,5 +29,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Prototype Scenes/Prototype_Cooking.unity
     guid: 1d5462ba72c1f474abaed2bbaba0100f
+  - enabled: 1
+    path: Assets/Scenes/Kye_New/Drink_Minigame Lily1.unity
+    guid: c429651a0e98fa549b65b5401ae8ffbe
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 60b5f842aa90f4742960b1cc923a7409, type: 2}

@@ -116,7 +116,7 @@ public class LevelManager : MonoBehaviour
         else
         {
             Debug.Log("A new day begins");
-            SceneManager.LoadScene("PGF_Master", LoadSceneMode.Single);
+            SceneManager.LoadScene("Drink_Minigame Lily1", LoadSceneMode.Single);
         }
     }
 
@@ -174,7 +174,7 @@ public class LevelManager : MonoBehaviour
         switch (GameManager.instance.dayNumber)
         {
             case 0:
-                maxCustomerCount = 1;
+                maxCustomerCount = 0;
                 dayNumber = 1;
                 isDayOne = true;
                 GrannyToggle(true);

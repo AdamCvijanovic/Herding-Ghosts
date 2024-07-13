@@ -59,6 +59,7 @@ public class BedScript : MonoBehaviour
             audioBedCharm.Play();
             Debug.Log("Sleep");
             levelManager.EndDay();
+            SaveSystem.ManagerState.SetSaveItems();
             sleepActive = true;
             AudioLowPassFilter lowPassFilter = backgroundMusic.GetComponent<AudioLowPassFilter>();
             lowPassFilter.enabled = true;

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-
+    public string mainScene;
   //public Manager manager;
 
  public void PlayGame ()
@@ -14,6 +14,12 @@ public class MainMenu : MonoBehaviour
     //MobileGameManager.instance
     Time.timeScale = 1f;
  }
+
+    public void PlayCertainScene()
+    {
+        SceneManager.LoadScene(mainScene);
+    }
+
   public void BackToMM ()
  {
     SceneManager.LoadScene(0);

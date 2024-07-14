@@ -19,6 +19,8 @@ public class RollingPinUI : MonoBehaviour/*, IBeginDragHandler, IDragHandler, IE
     public bool middle;
     public bool lower;
 
+    public int flatness;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -87,11 +89,41 @@ public class RollingPinUI : MonoBehaviour/*, IBeginDragHandler, IDragHandler, IE
 
     public void UpdateDough()
     {
-        doughObj.UpdateDoughFlatness();
+        //doughObj.UpdateDoughFlatness();
+        CalculateDoughFlatness();
         ResetColBools();
     }
 
-    
+    public void CalculateDoughFlatness()
+    {
+        flatness = doughObj.flatnessLevel;
+        Sprite newSprite = doughObj.doughDefault;
+
+        if (flatness < 2)
+        {
+            flatness++;
+        }
+        else
+        {
+            //flatnessLevel = 0;
+        }
+
+        switch (flatness)
+        {
+            case 0:
+                newSprite = doughObj.doughDefault;
+                break;
+            case 1:
+                newSprite = doughObj.doughHalfFlat;
+                break;
+            case 2:
+                newSprite = doughObj.doughFlat;
+                break;
+
+        }
+
+        doughObj.UpdateDoughFlatness(newSprite, flatness);
+    }
 
     public void ResetColBools()
     {

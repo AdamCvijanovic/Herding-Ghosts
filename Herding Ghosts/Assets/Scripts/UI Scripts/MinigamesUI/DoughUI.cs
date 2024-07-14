@@ -98,31 +98,17 @@ public class DoughUI : MonoBehaviour
         doughImage.sprite = sprite;
     }
 
-    public void UpdateDoughFlatness()
+    public void UpdateDoughFlatness(Sprite newSprite, int flatnessIn)
     {
-        if(flatnessLevel < 2)
+        flatnessLevel = flatnessIn;
+
+        if (flatnessLevel == 2)
         {
-            flatnessLevel++;
-        }
-        else
-        {
-            //flatnessLevel = 0;
+             _bakeryWorkbenchUI.SetInventoryMode();
         }
 
-        switch (flatnessLevel)
-        {
-            case 0:
-                doughImage.sprite = doughDefault;
-                break;
-            case 1:
-                doughImage.sprite = doughHalfFlat;
-                break;
-            case 2:
-                doughImage.sprite = doughFlat;
-                _bakeryWorkbenchUI.SetInventoryMode();
-                break;
+        UpdateImage(newSprite);
 
-        }
     }
 
     public void ConsumeCurrentItem()

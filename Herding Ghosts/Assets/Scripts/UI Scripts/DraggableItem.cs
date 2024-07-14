@@ -68,12 +68,17 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void OnDrag(PointerEventData eventData)
     {
-        transform.position = eventData.position;
+        //transform.position = eventData.position;
+        transform.position = eventData.pointerCurrentRaycast.worldPosition;
     }
 
     public void OnEndDrag(PointerEventData eventData)
-    { 
-        if(eventData.pointerCurrentRaycast.gameObject.GetComponent<InventorySlot>())
+    {
+        if (eventData.pointerCurrentRaycast.gameObject == null)
+        {
+            Debug.Log("Raycast Out Of Bounds, Revert Item to Original Position");
+        }
+        else if (eventData.pointerCurrentRaycast.gameObject.GetComponent<InventorySlot>())
         {
             parentAfterDrag = eventData.pointerCurrentRaycast.gameObject.transform;
             //We should update the inventory now
@@ -83,6 +88,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         {
             eventData.pointerCurrentRaycast.gameObject.GetComponent<FoodPrepPanelUI>().SetParentAfterDrag(this);
         }
+        
 
         //parent is set in the inventory slot???
         transform.SetParent(parentAfterDrag);

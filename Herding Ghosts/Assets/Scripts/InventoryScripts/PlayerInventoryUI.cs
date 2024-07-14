@@ -43,11 +43,21 @@ public class PlayerInventoryUI : MonoBehaviour
         
     }
 
-
-    public void RemoveAt(int index)
+    public void ActivateInventory()
     {
-        InventorySlot curInvSlot = _inventorySlotList[index];
-        curInvSlot.RemoveItemFromSlot();
+        if (_playerInventoryPanel != null)
+        {
+            _playerInventoryPanel.SetActive(true);
+            UpdateInventory();
+        }
+    }
+
+    public void DeActivateInventory()
+    {
+        if (_playerInventoryPanel != null)
+        {
+            _playerInventoryPanel.SetActive(false);
+        }
     }
 
     public void ToggleInventory()
@@ -133,4 +143,11 @@ public class PlayerInventoryUI : MonoBehaviour
             }
         }
     }
+
+    public void RemoveAt(int index)
+    {
+        InventorySlot curInvSlot = _inventorySlotList[index];
+        curInvSlot.RemoveItemFromSlot();
+    }
+
 }

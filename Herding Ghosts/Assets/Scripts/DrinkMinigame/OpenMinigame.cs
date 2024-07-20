@@ -35,6 +35,6 @@ public class OpenMinigame : MonoBehaviour
 
         m_minigameCanvas = GameObject.Instantiate(start);
 
-        ui.SetActive(false);
+        ui.SetActive(true);
     }
 }

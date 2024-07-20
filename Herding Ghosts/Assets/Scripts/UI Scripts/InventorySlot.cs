@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class InventorySlot : MonoBehaviour, IDropHandler
 {
+    public bool trashSlot;
 
     //**acvija This reference really needs to be something else more secure
     //this is bound to cause an error
@@ -44,6 +45,11 @@ public class InventorySlot : MonoBehaviour, IDropHandler
         if(currentItem != null && doughUI != null)
         {
             doughUI.UpdateCurrentIngredient();
+        }
+
+        if (trashSlot)
+        {
+            ConsumeItem();
         }
     }
 

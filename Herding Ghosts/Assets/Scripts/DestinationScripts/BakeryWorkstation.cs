@@ -82,7 +82,7 @@ public class BakeryWorkstation : MonoBehaviour
 
     public void LinkInventoryToPlayer()
     {
-        _inventory._items = FindObjectOfType<PlayerInventoryUI>().playerInventory._items;
+        //_inventory._items = FindObjectOfType<PlayerInventoryUI>().playerInventory._items;
     }
 
     public void InventoryCheck(Item item)

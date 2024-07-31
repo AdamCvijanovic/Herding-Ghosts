@@ -34,9 +34,9 @@ public class StatsUI : MonoBehaviour
     {
         if(GameManager.instance != null)
         {
-            satisfiedCustomers = GameManager.instance.satisfiedCustomers;
-            disastisfiedCustomers = GameManager.instance.disastisfiedCustomers;
-            points = GameManager.instance.points;
+            satisfiedCustomers = GameManager.instance.GetSatisifed();
+            disastisfiedCustomers = GameManager.instance.GetDisatisfied();
+            points = GameManager.instance.GetPoints();
 
             statsString = "Satisfied Customers " + satisfiedCustomers + "\n\n Disatisfied Customers " + disastisfiedCustomers /*+ "\n\n Points " + points*/;
 
@@ -46,7 +46,7 @@ public class StatsUI : MonoBehaviour
 
     public void UpdateBannerText()
     {
-        switch(GameManager.instance.dayNumber)
+        switch(GameManager.instance.GetDay())
         {
             case 3:
                 bannertext = "First Day Completed!";

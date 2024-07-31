@@ -1,35 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    /// <summary>Static reference to the instance of our DataManager</summary>
-    public static GameManager instance;
 
-    public int satisfiedCustomers;
-    public int disastisfiedCustomers;
-    public int points;
-    public int dayNumber;
+    private static GameManager _instance;
 
-    /// <summary>Awake is called when the script instance is being loaded.</summary>
+    public static GameManager instance { get { return _instance; } }
+
+
     void Awake()
     {
-        // If the instance reference has not been set, yet, 
-        if (instance == null)
+        if (_instance != null && _instance != this)
         {
-            // Set this instance as the instance reference.
-            instance = this;
+            Destroy(this.gameObject);
         }
-        else if (instance != this)
+        else
         {
-            // If the instance reference has already been set, and this is not the
-            // the instance reference, destroy this game object.
-            Destroy(gameObject);
+            _instance = this;
         }
 
-        // Do not destroy this object, when we load a new scene.
+
+        if (GetComponent<SaveItem>().numbersToSave.Count == 0) { 
+            GetComponent<SaveItem>().numbersToSave.Add("satisfiedCustomers", 0);
+            GetComponent<SaveItem>().numbersToSave.Add("disastisfiedCustomers", 0);
+            GetComponent<SaveItem>().numbersToSave.Add("points", 0);
+            GetComponent<SaveItem>().numbersToSave.Add("day", 0);
+        }
+
         DontDestroyOnLoad(gameObject);
+        // If the instance reference has not been set, yet, 
     }
 
     private void Start()
@@ -39,40 +41,63 @@ public class GameManager : MonoBehaviour
 
     public void ResetDailyCounters()
     {
-        satisfiedCustomers = 0;
-        disastisfiedCustomers = 0;
     }
 
     public void UpdateCustomerCounter(int i)
     {
-        satisfiedCustomers = i;
+        GetComponent<SaveItem>().numbersToSave["satisfiedCustomers"] += i;
 
-        if (FindObjectOfType<LevelManager>().maxCustomerCount <= satisfiedCustomers)
+        GetComponent<SaveItem>().numbersToSave["points"] += i * 250;
+
+
+        if (FindObjectOfType<LevelManager>().maxCustomerCount <= GetComponent<SaveItem>().numbersToSave["satisfiedCustomers"])
         {
             FindObjectOfType<LevelManager>().AllCustomersServedForTheDay();
         }
+
     }
 
     public void UpdateDisatisfiedCustomerCounter(int i)
     {
-        disastisfiedCustomers = i;
+        GetComponent<SaveItem>().numbersToSave["disastisfiedCustomers"] += i;
     }
 
     public void UpdatePoints(int i)
     {
-        satisfiedCustomers = i;
+        GetComponent<SaveItem>().numbersToSave["points"] += i;
     }
 
     public void IncrementDay()
     {
-        ++dayNumber;
+        GetComponent<SaveItem>().numbersToSave["day"]++;
     }
 
     public void ClearAllFields()
     {
-        satisfiedCustomers = 0;
-        disastisfiedCustomers = 0;
-        points = 0;
-        dayNumber = 0;
+        GetComponent<SaveItem>().numbersToSave["satisfiedCustomers"] = 0;
+        GetComponent<SaveItem>().numbersToSave["disastisfiedCustomers"] = 0;
+        GetComponent<SaveItem>().numbersToSave["points"] = 0;
+        GetComponent<SaveItem>().numbersToSave["day"] = 0;
     }
+
+    public int GetSatisifed()
+    {
+        return GetComponent<SaveItem>().numbersToSave["satisfiedCustomers"];
+    }
+
+    public int GetDisatisfied()
+    {
+        return GetComponent<SaveItem>().numbersToSave["disastisfiedCustomers"];
+    }
+
+    public int GetPoints()
+    {
+        return GetComponent<SaveItem>().numbersToSave["points"];
+    }
+
+    public int GetDay()
+    {
+        return GetComponent<SaveItem>().numbersToSave["day"];
+    }
+
 }

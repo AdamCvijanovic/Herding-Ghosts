@@ -44933,6 +44933,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1895333278}
   - component: {fileID: 1895333277}
+  - component: {fileID: 1895333279}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -44952,10 +44953,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61c7cbea111fb5b4883650dc81d53ff6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  satisfiedCustomers: 0
-  disastisfiedCustomers: 0
-  points: 0
-  dayNumber: 0
 --- !u!4 &1895333278
 Transform:
   m_ObjectHideFlags: 0
@@ -44971,6 +44968,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1895333279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895333276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95a23e4269d7052429edac57a4a27c76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObjectName: GameManager
 --- !u!1 &1897416319
 GameObject:
   m_ObjectHideFlags: 0

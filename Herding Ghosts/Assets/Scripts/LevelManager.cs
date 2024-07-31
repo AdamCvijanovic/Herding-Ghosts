@@ -46,7 +46,6 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameManager.instance.ResetDailyCounters();
         canvasManager = FindObjectOfType<CanvasManager>();
         uiFadeInOut = FindObjectOfType<UIFadeInOut>();
         SetMaxCustomers();
@@ -56,7 +55,7 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        remainingCustomers = (maxCustomerCount - FindObjectOfType<GameManager>().satisfiedCustomers);
+       
 
         ChangeLighting();
 
@@ -108,7 +107,7 @@ public class LevelManager : MonoBehaviour
 
     public void RepeatDay()
     {
-        if (GameManager.instance.dayNumber >= 6)
+        if (GameManager.instance.GetDay() >= 6)
         {
             Debug.Log("Third Day passed");
             RollCredits();
@@ -128,7 +127,6 @@ public class LevelManager : MonoBehaviour
     public void RollCredits2()
     {
         SceneManager.LoadScene("Game_Credits", LoadSceneMode.Single);
-        GameManager.instance.ClearAllFields();
     }
 
     public void ReturnToMenu()
@@ -171,7 +169,7 @@ public class LevelManager : MonoBehaviour
 
     public void SetMaxCustomers()
     {
-        switch (GameManager.instance.dayNumber)
+        switch (GameManager.instance.GetDay())
         {
             case 0:
                 maxCustomerCount = 0;

@@ -146,6 +146,21 @@ public class SaveSystem : MonoBehaviour
 
     }
 
+    public int GetSaveDay(int slot)
+    {
+        var saveLocation = Application.persistentDataPath + "/save" + slot + ".json";
+        if (File.Exists(saveLocation))
+        {
+            var jsonData = File.ReadAllText(saveLocation);
+            var helperItems = JsonConvert.DeserializeObject<FinalSave>(jsonData);
+            return helperItems.finalSaveditems[slot].numbersToSave["day"];
+        }
+
+        else
+            return -1;
+
+    }
+
     public void DeleteSave(int slot)
     {
         var saveLocation = Application.persistentDataPath + "/save" + slot + ".json";

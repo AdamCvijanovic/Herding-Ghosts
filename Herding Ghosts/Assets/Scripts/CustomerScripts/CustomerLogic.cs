@@ -170,6 +170,6 @@ public class CustomerLogic : MonoBehaviour
     public void CustomerDisatisfied()
     {
         SetState(CustomerLogic.CustomerState.Leaving);
-        GameManager.instance.disastisfiedCustomers++;
+        GameManager.instance.UpdateDisatisfiedCustomerCounter(1);
     }
 }

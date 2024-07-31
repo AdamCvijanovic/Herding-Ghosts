@@ -21,13 +21,14 @@ public class LoadButtons : MonoBehaviour
         if (!SaveSystem.ManagerState.CheckAvailable(slot))
         {
             gameObject.GetComponent<Button>().interactable = false;
-            transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = $"Save Slot {slot + 1}";
+            transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = $"Save Slot {slot + 1}";
         }
         else
         {
             var time = SaveSystem.ManagerState.GetSaveTime(slot);
-
-            transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = $"Save Slot {slot + 1}: {time}";
+            var day = SaveSystem.ManagerState.GetSaveDay(slot);
+            transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = $"{time}";
+            transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = $"Day: {day}";
         }
     }
 

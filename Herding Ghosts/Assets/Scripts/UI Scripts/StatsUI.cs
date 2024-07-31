@@ -19,7 +19,7 @@ public class StatsUI : MonoBehaviour
     {
         textMeshProUGUI = GetComponent<TextMeshProUGUI>();
         UpdateStatsText();
-        IncrementDay();
+        //IncrementDay();
         UpdateBannerText();
 
     }

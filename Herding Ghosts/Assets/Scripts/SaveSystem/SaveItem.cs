@@ -12,7 +12,7 @@ public class SaveItem : MonoBehaviour
 
     public Dictionary<string, string> stringsToSave = new Dictionary<string, string>();
 
-    public Dictionary<Vector3, string> Vector3ToSave = new Dictionary<Vector3, string>();
+    public Dictionary<string, Vector3> Vector3ToSave = new Dictionary<string, Vector3>();
 }
 
 public class SaveHelper
@@ -23,7 +23,7 @@ public class SaveHelper
 
     public Dictionary<string, string> stringsToSave = new Dictionary<string, string>();
 
-    public Dictionary<Vector3, string> Vector3ToSave = new Dictionary<Vector3, string>();
+    public Dictionary<string, Vector3> Vector3ToSave = new Dictionary<string, Vector3>();
 }
 
 

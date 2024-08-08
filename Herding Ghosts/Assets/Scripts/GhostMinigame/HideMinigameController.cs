@@ -8,19 +8,21 @@ public class HideMinigameController : MonoBehaviour
     List<HideLocation> m_HideLocations = new List<HideLocation>();
     int m_selectedItem = -1;
 
-    delegate void NewHideLocationEvent();
+    public delegate void NewHideLocationEvent();
 
-    event NewHideLocationEvent  newLocation;
+    public static NewHideLocationEvent  hiderEvent;
+
+    public GameObject m_hidingGhost;
     // Start is called before the first frame update
+    
     void Start()
     {
         m_selectedItem = Random.Range(0, m_HideLocations.Count);
 
-        newLocation = AssignNewHideLocation;
 
-        //m_HideLocations[m_selectedItem].SelectLocation(newLocation);
-
-       
+        AssignNewHideLocation();
+        hiderEvent += AssignNewHideLocation;
+      
     }
 
     // Update is called once per frame
@@ -31,6 +33,13 @@ public class HideMinigameController : MonoBehaviour
 
     void AssignNewHideLocation()
     {
-        m_HideLocations[m_selectedItem].DeSelectLocation();
+        m_selectedItem = Random.Range(0, m_HideLocations.Count);
+        m_HideLocations[m_selectedItem].SelectLocation();
+
+        var hiding = Instantiate(m_hidingGhost,transform.position, transform.rotation);
+       
     }
+
+
+
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+
 public class HideLocation : MonoBehaviour
 {
     bool m_hideEvent_Activated = false;
@@ -13,10 +14,7 @@ public class HideLocation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-
-
-
+        HideMinigameController.hiderEvent += DeSelectLocation;
     }
 
     // Update is called once per frame
@@ -25,17 +23,26 @@ public class HideLocation : MonoBehaviour
         
     }
 
-    public void SelectLocation(UnityEvent assignNew)
+    public void SelectLocation()
     {
+        m_hideEvent_Activated = true;
 
     }
 
 
     public void DeSelectLocation()
     {
-
+        if (m_hideEvent_Activated)
+        {
+            m_hideEvent_Activated = false;
+        }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.tag == "Player")
+            HideMinigameController.hiderEvent?.Invoke();
+    }
 
 
 }
